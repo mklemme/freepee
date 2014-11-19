@@ -26,6 +26,12 @@ gem 'sdoc', '~> 0.4.0',          group: :doc
 gem "twitter-bootstrap-rails"
 gem "simple_form"
 
+# Yelp
+gem 'yelp', require: 'yelp'
+
+# OAuth. Required fro Yelp
+gem 'oauth', '~> 0.4.7' 
+
 # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
 gem 'spring',        group: :development
 
@@ -45,7 +51,6 @@ end
 
 gem_group :development do
   gem "better_errors"
-  gem "pry-rails"
   gem "pry-byebug"
   gem "quiet_assets"
   gem "awesome_print", require: "ap"
