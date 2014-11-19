@@ -1,6 +1,5 @@
 class LooController < ApplicationController
   def index
-    
-    @loo = Loo.last
+    @loos = Loo.all
   end
 end

@@ -1,3 +1,4 @@
-<%= @loo.name %>
-
-<%= @loo.address %>
+<% @loos.each do |l| %>
+	<%= @loo.name %>
+	<%= @loo.address %>
+<% end %>
