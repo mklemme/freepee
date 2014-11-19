@@ -1,4 +1,8 @@
 <% @loos.each do |l| %>
-	<%= @loo.name %>
-	<%= @loo.address %>
+	<%= l.name %>
+	<%= l.address %>
+<% end %>
+
+<% @users.each do |u| %>
+	<%= u.email %>
 <% end %>
