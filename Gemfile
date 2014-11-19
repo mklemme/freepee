@@ -22,8 +22,39 @@ gem 'jbuilder', '~> 2.0'
 # bundle exec rake doc:rails generates the API under doc/api.
 gem 'sdoc', '~> 0.4.0',          group: :doc
 
+# Bootstrap and simple_form gems
+gem "twitter-bootstrap-rails"
+gem "simple_form"
+
+# Yelp
+gem 'yelp', require: 'yelp'
+
+# OAuth. Required fro Yelp
+gem 'oauth', '~> 0.4.7' 
+
 # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
 gem 'spring',        group: :development
+
+# RSPEC and testing gems for testing, dev enviroments
+gem_group :test, :development do
+  gem "rspec-rails"
+  gem "capybara"
+  gem "launchy"
+  gem "guard-rspec"
+  gem "rb-fsevent"
+  gem "factory_girl_rails"
+end
+
+gem_group :test do
+  gem "shoulda-matchers"
+end
+
+gem_group :development do
+  gem "better_errors"
+  gem "pry-byebug"
+  gem "quiet_assets"
+  gem "awesome_print", require: "ap"
+end
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
