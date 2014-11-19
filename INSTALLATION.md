@@ -10,9 +10,8 @@ Tech stack:
 * MVC infrastructure;
 * 3 models: User, Loos, and ratings;
 * Google map api for directions.
-* 
 
-It uses these gems:
+Freepee uses these gems:
 
 * [Database Authenticatable](http://rubydoc.info/github/plataformatec/devise/master/Devise/Models/DatabaseAuthenticatable): encrypts and stores a password in the database to validate the authenticity of a user while signing in. The authentication can be done both through POST requests or HTTP Basic Authentication.
 * [Omniauthable](http://rubydoc.info/github/plataformatec/devise/master/Devise/Models/Omniauthable): adds OmniAuth (https://github.com/intridea/omniauth) support.
@@ -56,6 +55,21 @@ Next, you need to run the Figaro generator:
 ```console
 figaro install
 ```
+
+Add API keys to the file Figaro generated in `config/application.yml`. This app expects these API values defined:
+
+```ruby
+mandrill_username: mandrill_login
+mandrill_api: api-key_abcdef123456
+```
+
+Create local instance of the database:
+
+```console
+rake db:create && rake db:migrate
+```
+
+
 
 ### Contributors
 
