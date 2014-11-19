@@ -61,3 +61,6 @@
 
 # APIs
 - directions - Google map : Directions service in the Google Maps JavaScript API Google Directions API
+
+# Webscrape	
+- Source seed data from the web via a web scrape 
