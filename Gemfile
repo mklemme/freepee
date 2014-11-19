@@ -30,13 +30,13 @@ gem "simple_form"
 gem 'yelp', require: 'yelp'
 
 # OAuth. Required fro Yelp
-gem 'oauth', '~> 0.4.7' 
+gem 'oauth', '~> 0.4.7'
 
 # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
 gem 'spring',        group: :development
 
 # RSPEC and testing gems for testing, dev enviroments
-gem_group :test, :development do
+group :test, :development do
   gem "rspec-rails"
   gem "capybara"
   gem "launchy"
@@ -45,11 +45,11 @@ gem_group :test, :development do
   gem "factory_girl_rails"
 end
 
-gem_group :test do
+group :test do
   gem "shoulda-matchers"
 end
 
-gem_group :development do
+group :development do
   gem "better_errors"
   gem "pry-byebug"
   gem "quiet_assets"
