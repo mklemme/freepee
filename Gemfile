@@ -41,7 +41,10 @@ gem 'spring',        group: :development
 gem 'devise'
 
 # Authorization
-gem 'cancan'
+gem 'cancancan', '~> 1.9'
 
 # Pry
 gem 'pry-rails'
+
+# Figaro to keep our API data secret
+gem 'figaro'
