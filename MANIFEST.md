@@ -62,6 +62,7 @@
 
 ## APIs
 - directions - Google map : Directions service in the Google Maps JavaScript API Google Directions API
+- Yelp: For each request, Yelp returns 40 resutls. Requires OAuth authentication. Requires lat/long for location searches
 
 ## Webscrape	
 - Source seed data from the web via a web scrape 
