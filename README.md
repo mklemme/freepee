@@ -1,6 +1,6 @@
 # Freepee documentation
 
-Live link: [freepee](http://freepee.net/).
+Live link: [freepee](http://freepee.club/).
 
 Freepee makes it easy to find a loo near you. 
 
@@ -24,7 +24,7 @@ Freepee uses these gems:
 If you would like to create a local version of Freepee:
 
 ```ruby
-git clone https://github.com/mklemme/freepee/new/master
+git clone https://github.com/mklemme/freepee.git
 ```
 
 Since we are using API keys, you will need to add your own using the gem, Figaro.
