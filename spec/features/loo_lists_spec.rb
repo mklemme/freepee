@@ -31,6 +31,10 @@ feature "LooLists", :type => :feature do
     expect(page).to have_text(loo.baby_changing)
     expect(page).to have_text(loo.cost)
     expect(page).to have_text(loo.handicapped)
+    expect(page).to have_text(loo.stall)
+    expect(page).to have_text(loo.shower)
+    expect(page).to have_text(loo.toiletries)
+    expect(page).to have_text(loo.venue)
 
   end # end home page
 

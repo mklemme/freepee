@@ -8,5 +8,9 @@ FactoryGirl.define do
     baby_changing true
     key true
     cost "Customer only"
+    stall "Single Occupancy"
+    shower true
+    toiletries true
+    venue "Business"
   end
 end
