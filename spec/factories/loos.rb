@@ -1,7 +1,7 @@
 FactoryGirl.define do
   factory :loo do
     name "MyString"
-address "MyString"
+    address "Address"
   end
 
 end

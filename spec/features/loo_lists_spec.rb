@@ -14,6 +14,7 @@ feature "LooLists", :type => :feature do
     visit root_path
 
     expect(page).to have_text(loo.name)
+    expect(page).to have_text(loo.address)
 
   end # end home page
 

@@ -1,0 +1,2 @@
+module LooHelper
+end
