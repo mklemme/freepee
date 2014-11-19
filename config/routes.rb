@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
   get 'loo/index'
+  
+  get 'loo/:id', to: 'loo#show', as: 'single_loo'
 
   devise_for :users
   get 'global/index'

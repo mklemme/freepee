@@ -1,5 +1,6 @@
 FactoryGirl.define do
   factory :loo do
+    id 1
     name "MyString"
     address "Address"
     rating 0.5
