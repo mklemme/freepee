@@ -10,10 +10,11 @@ feature "Users", :type => :feature do
   #exercise
   fill_in "user[email]", with: "me@email.com"
   fill_in "user[password]", with: "password"
-  click_button('commit')
+  click_button('Register')
 
   #verify
-  expect(page).to have_text()
+  expect(page).to have_text("Welcome! You have signed up successfully. me@email.com")
+  # expect(session[:user_id]).to_not be_nil
 
   end 
 
