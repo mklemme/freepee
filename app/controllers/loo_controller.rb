@@ -4,6 +4,6 @@ class LooController < ApplicationController
   end
 
   def show
-    @loo = Loo.find(1)
+    @loo = Loo.find(params[:id])
   end
 end
