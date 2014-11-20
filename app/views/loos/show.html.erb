@@ -10,6 +10,8 @@
 <p> toiletries? <%= @loo.toiletries %></p>
 <p> Venue: <%= @loo.venue %></p>
 <hr>
+<%= render :partial => 'comment_form' %>
+<hr>
 <% @loo.ratings.each do |rating| %>
   <p> Comment: <%= rating.comment %> </p>
   <p> Rating: <%= rating.rating %> </p>

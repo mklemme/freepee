@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
 
   resources :loos
+  post 'loos/:id/new_rating', to: 'loos#add_comment', as: 'new_rating'
 
   devise_for :users
   get 'global/index'

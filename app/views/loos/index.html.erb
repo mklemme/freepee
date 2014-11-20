@@ -1,3 +1,5 @@
+<h2> Loos: </h2>
+
 <% @loos.each do |l| %>
 	<p> Name: <%= l.name %> </p>
 	<p> Address: <%= l.address %> </p>
@@ -6,9 +8,12 @@
 	<p> Handicapped? <%= l.handicapped %> </p>
 	<p> Cost? <%= l.cost %> </p>
 	<p> Key required? <%= l.key %> </p>
+	<%= link_to("View loo", loo_path(l.id)) %>
+	<hr>
 
 <% end %>
 
 <% @users.each do |u| %>
-	<%= u.email %>
+	<h2> Users: </h2>
+	<p><%= u.email %></p>
 <% end %>
