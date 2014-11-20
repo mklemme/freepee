@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  
+
   resources :loos
 
   devise_for :users
@@ -19,7 +19,7 @@ Rails.application.routes.draw do
   # You can have the root of your site routed with "root"
   root 'loos#index'
 
-  
+
 
 
   # Example of regular route:
