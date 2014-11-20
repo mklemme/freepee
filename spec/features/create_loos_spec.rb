@@ -7,13 +7,12 @@ feature "CreateLoos", :type => :feature do
   visit new_loo_path
 
   #exercise
-  # fill_in "name[email]", with: "me@email.com"
-  # fill_in "user[password]", with: "password"
-  # click_button('Register')
+  fill_in "loo[name]", with: "Starbucks"
+  fill_in "loo[address]", with: "255 Bush St."
+  click_button('Add')
 
   #verify
-  expect(page).to have_text("Hello world")
-  # expect(session[:user_id]).to_not be_nil
+  expect(loo.name).to be("Starbucks")
 
   end 
 end

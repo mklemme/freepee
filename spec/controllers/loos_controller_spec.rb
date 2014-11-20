@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.describe LooController, :type => :controller do
+RSpec.describe LoosController, :type => :controller do
 
   describe "GET index" do
     it "returns http success" do
