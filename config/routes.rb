@@ -1,7 +1,6 @@
 Rails.application.routes.draw do
-  get 'loo/index'
-  
-  get 'loo/:id', to: 'loo#show', as: 'single_loo'
+
+  resources :loos
 
   devise_for :users
   get 'global/index'
@@ -18,7 +17,10 @@ Rails.application.routes.draw do
   # See how all your routes lay out with "rake routes".
 
   # You can have the root of your site routed with "root"
-  root 'loo#index'
+  root 'loos#index'
+
+
+
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
