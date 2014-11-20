@@ -5,11 +5,17 @@ class LoosController < ApplicationController
   end
 
   def new
-  	@loo = Loo.new
+    @loo = Loo.new
+  end
+
+  def show
+    @loo = Loo.find_by_id(params[:id])
   end
 
   def create
   	loo = Loo.create(loo_params)
+    redirect_to loo_path(loo)
+
   end
 
   private

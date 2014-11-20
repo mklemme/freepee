@@ -1,4 +1,5 @@
-class LooController < ApplicationController
+class TestingController < ApplicationController
+
   def index
     @loo = Loo.last
   end
@@ -6,4 +7,5 @@ class LooController < ApplicationController
   def show
     @loo = Loo.find(params[:id])
   end
+  
 end

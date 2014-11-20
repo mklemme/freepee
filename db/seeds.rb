@@ -42,7 +42,7 @@ loos = Loo.create([
       comment: "It was decent",
       rating: 1
     }, {
-      loo_id: 1,
+      loo_id: 1 ,
       user_id: 1,
       comment: "Found a buck on the floor. cool.",
       rating: 1
