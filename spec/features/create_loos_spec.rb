@@ -12,7 +12,7 @@ feature "CreateLoos", :type => :feature do
   # click_button('Register')
 
   #verify
-  # expect(page).to have_text()
+  expect(page).to have_text("Hello world")
   # expect(session[:user_id]).to_not be_nil
 
   end 
