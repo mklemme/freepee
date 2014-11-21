@@ -1,0 +1,16 @@
+<p><%= @loos.name %></p>
+<p><%= @loos.address %></p>
+<p><%= @loos.city %>, <%= @loos.state %> <%= @loos.postalCode %></p>
+
+<p>We need information about this place's bathroom. Please rate it!</p>
+
+<%= form_for @loo do |f| %>
+	<div class="field">
+		<%= f.label :name %><br />
+		<%= f.text_field(:name, autofocus: true) %>
+	</div>
+
+	<div class="actions">
+		<%= f.submit "Add" %>
+	</div>
+<% end %>

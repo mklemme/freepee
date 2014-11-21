@@ -2,6 +2,16 @@ class Loo < ActiveRecord::Base
   belongs_to :user
   has_many :ratings
 
+
+  validates :name, presence: true
+  validates :lat, presence: true
+  validates :long, presence: true
+  validates :address, presence: true
+  validates :city, presence: true
+  validates :state, presence: true
+  validates :postalCode, presence: true
+  validates :country, presence: true
+
   time1 = Time.now
   yyyy = time1.year.to_s
   mm = '%02d' % time1.month.to_s
@@ -38,9 +48,8 @@ class Loo < ActiveRecord::Base
         dist = (lat.to_f - loo[:lat].to_f).abs + (lon.to_f - loo[:long].to_f).abs
         {id: loo[:id], name: loo[:name], address: loo[:address], dist: dist}
       end
-      
+
       @result = @loo_results.sort_by{|e| e[:dist]}
 
   end
-
 end
