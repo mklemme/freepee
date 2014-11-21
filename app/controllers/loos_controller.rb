@@ -19,9 +19,12 @@ class LoosController < ApplicationController
 
   def add_comment
     loo = Loo.find_by_id(params[:id])
-    rating = loo.ratings.new(rating_params)
+    rating = loo.ratings.create(rating_params)
 
     redirect_to :back
+
+    # rating_info = "##{rating.id.to_s}"
+    # redirect_to loo_path(loo,"#{rating_info}")
   end
 
   private
@@ -31,6 +34,6 @@ class LoosController < ApplicationController
   end
 
   def rating_params
-    params.require(:rating).permit(:rating, :comment)
+    params.require(:rating).permit(:score, :comment)
   end
 end

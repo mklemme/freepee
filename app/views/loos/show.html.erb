@@ -12,8 +12,14 @@
 <hr>
 <%= render :partial => 'comment_form' %>
 <hr>
+
+<% @id = 1 %>
+
 <% @loo.ratings.each do |rating| %>
-  <p> Comment: <%= rating.comment %> </p>
-  <p> Rating: <%= rating.rating %> </p>
-  <hr>
+  <div id="rating-<%= @id %>">
+    <p> Comment: <%= rating.comment %> </p>
+    <p> Rating: <% if rating.score == 2 %> :) <% elsif rating.score == 1 %> :| <% else %> :(<% end %></p>
+    <hr>
+</div>
+<% @id += 1 %>
 <% end %>
