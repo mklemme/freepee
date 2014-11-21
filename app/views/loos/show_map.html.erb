@@ -1,0 +1,87 @@
+<!-- <p id="note">Here's how you can get there:</p> -->
+<script>
+var x = document.getElementById("note");
+
+var directionsDisplay;
+var directionsService = new google.maps.DirectionsService();
+var map;
+
+var freePee = {};
+
+freePee.getLocation=function() {
+    if (navigator.geolocation) {
+        navigator.geolocation.getCurrentPosition(freePee.showPosition, freePee.showError);
+        // x.innerHTML = "Here are your directions";
+    // } else {
+    //     x.innerHTML = "We're sorry, your geolocation is not supported by this browser.Please enter your current address";
+    }
+};
+
+// finding coords, calling other functions
+freePee.showPosition=function(position) {
+    var lat = position.coords.latitude;
+    var lon = position.coords.longitude;
+    var lat1 = 37.7786;
+    var lon1 = -122.3892;
+    console.log("lat: "+lat);
+    console.log("lon: "+lon);
+    freePee.initialize(lat, lon); 
+    freePee.calcRoute(lat, lon, lat1, lon1); 
+};
+
+freePee.initialize=function(lat, lon) {
+  directionsDisplay = new google.maps.DirectionsRenderer();
+  var currentLocation = new google.maps.LatLng(lat, lon);
+  var mapOptions = {
+    zoom:10,
+    center: currentLocation
+  };
+  map = new google.maps.Map(document.getElementById('map-canvas'), mapOptions);
+  directionsDisplay.setMap(map);
+};
+
+freePee.calcRoute=function(lat, lon, lat1, lon1) {
+    console.log(lat+","+lon);
+  var start = lat+","+lon;
+  var end = lat1+","+lon1;
+  var request = {
+      origin:start,
+      destination:end,
+      travelMode: google.maps.TravelMode.WALKING
+  };
+  directionsService.route(request, function(response, status) {
+    if (status == google.maps.DirectionsStatus.OK) {
+      directionsDisplay.setDirections(response);
+    }
+  });
+};
+
+freePee.showError=function(error) {
+    switch(error.code) {
+        case error.PERMISSION_DENIED:
+            x.innerHTML = "We're sorry, you have denied the request for Geolocation.Please enter your address, we'll search using that.";
+            break;
+        case error.POSITION_UNAVAILABLE:
+            x.innerHTML = "We're sorry, your location information is unavailable. Please enter your address, we'll search using that.";
+            break;
+        case error.TIMEOUT:
+            x.innerHTML = "We're sorry, the request to get your location timed out. Please enter your address.";
+            break;
+        case error.UNKNOWN_ERROR:
+            x.innerHTML = "We're sorry, we were unable to locate you. Please enter your address, we'll search using that.";
+            break;
+    }
+};
+
+$(document).ready(function(){
+freePee.getLocation();
+});
+
+    </script>
+  </head>
+  <body>
+
+    </div>
+    <div id="map-canvas"></div>
+  </body>
+</html>
