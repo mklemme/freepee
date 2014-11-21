@@ -1,13 +1,29 @@
 <!DOCTYPE html>
 <html>
 <head>
+<<<<<<< HEAD
   <title>Freepee</title>
   <link rel="stylesheet" type="text/css" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css">
   <link href='http://fonts.googleapis.com/css?family=Arvo' rel='stylesheet' type='text/css'>
+=======
+  <title>FreePee Club</title>
+>>>>>>> ffe956a56783e6296032882b5baed917d2261000
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
-  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application'%>
   <%= csrf_meta_tags %>
+<<<<<<< HEAD
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <script type="text/javascript"
+  src="https://maps.googleapis.com/maps/api/js?key=<%=Figaro.env.google_map_key%>">
+  </script>
+  
+=======
+
+<script type="text/javascript"
+      src="https://maps.googleapis.com/maps/api/js?key=<%=Figaro.env.google_map_key%>">
+    </script>
+
+>>>>>>> ffe956a56783e6296032882b5baed917d2261000
 </head>
 <body>
 <%= render :partial => 'partials/header' %>

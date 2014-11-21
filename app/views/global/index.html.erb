@@ -1,2 +1,88 @@
 <h1>Global#index</h1>
 <p>Find me in app/views/global/index.html.erb</p>
+
+<!-- this text changes if we're unable to geolocate you -->
+<p id="note">We're tracking you</p>
+<!-- this is the map -->
+
+<script>
+engine();
+function engine(){
+  getLocation();
+
+}
+var x = document.getElementById("note");
+//finding geolocation and sentting text at top of page based on results, calling the showPosition function which gets coords
+function getLocation() {
+    if (navigator.geolocation) {
+        navigator.geolocation.getCurrentPosition(showPosition, showError);
+        $("#note").text("Loading...");
+    } else {
+        x.innerHTML = "We're sorry, your geolocation is not supported by this browser.Please enter your current address";
+    }
+}
+//finding coords, calling other functions
+function showPosition(position) {
+    var lat = position.coords.latitude;
+    var lon = position.coords.longitude;
+    var latlon = position.coords.latitude + "," + position.coords.longitude;
+    console.log("lat: "+lat);
+    console.log("lon: "+lon);
+    console.log("latlon: "+latlon);
+    findClosest(lat, lon);
+}
+
+function showError(error) {
+    switch(error.code) {
+        case error.PERMISSION_DENIED:
+            x.innerHTML = "We're sorry, you have denied the request for Geolocation.Please enter your address, we'll search using that."
+            break;
+        case error.POSITION_UNAVAILABLE:
+            x.innerHTML = "We're sorry, your location information is unavailable. Please enter your address, we'll search using that."
+            break;
+        case error.TIMEOUT:
+            x.innerHTML = "We're sorry, the request to get your location timed out. Please enter your address."
+            break;
+        case error.UNKNOWN_ERROR:
+            x.innerHTML = "We're sorry, we were unable to locate you. Please enter your address, we'll search using that."
+            break;
+    }
+}
+
+function findClosest(lat, lon){
+	// console.log("here's the lat long GLOBAL"+lat +lon);
+    $.ajax({
+      type: "POST",
+      url: "/loos/foursquare",
+      data: {
+        'fs_data':{
+          'lat' : lat,
+          'lon' : lon
+        }
+      },
+      success:function(msg){
+        $( "html" ).empty();
+        $( "html" ).append( msg );
+      },
+
+      error:function(errormessage){
+        console.log("Error")
+        console.log(errormessage)
+      }
+
+    })
+  //   $.ajax({
+  //   type: 'POST',
+  //   url: '/loos/foursquare',
+  //   dataType: 'json',
+  //   data: {
+  //       'lat': lat,
+  //       'lon': lon,
+  //   },
+  //   success: function(data){
+  //     console.log("posted lat and long: "+lat+lon);
+  //   }
+  // });
+}
+
+</script>

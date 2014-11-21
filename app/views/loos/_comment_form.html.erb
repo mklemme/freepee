@@ -1,0 +1,9 @@
+<h3>Add review:</h3>
+<%= form_for :rating, url: {action: "add_comment"}, html: {class: "rating_form"} do |f| %>
+  <p> <%= f.radio_button(:score, "0") %> <%= label_tag(:rating_neg, ":(") %> </p>
+  <p> <%= f.radio_button(:score, "1") %> <%= label_tag(:rating_neut, ":|") %> </p>
+  <p> <%= f.radio_button(:score, "2") %> <%= label_tag(:rating_pos, ":)") %> </p>
+  <p> <%= label_tag(:comment, "comment") %> </p>
+  <p> <%= f.text_area :comment, size: "60x12" %> </p>
+  <%= f.submit "Create" %>
+<% end %>

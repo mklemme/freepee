@@ -17,7 +17,8 @@ loos = Loo.create([
     stall: "Single Occupancy",
     shower: true,
     toiletries: true,
-    venue: "Business"
+    venue: "Business",
+    user_id: 1
   },{
     name: "Bay Stree Cafe",
     address: "456 Bay Hay Nay Pay Second Street. San Francisco, CA 00000",
@@ -29,6 +30,31 @@ loos = Loo.create([
     stall: "Single Occupancy",
     shower: true,
     toiletries: false,
-    venue: "Business"
+    venue: "Business",
+    user_id: 1
   }
   ])
+
+  ratings = Rating.create([
+    {
+      loo_id: 1,
+      user_id: 1,
+      comment: "It was decent",
+      rating: 1
+    }, {
+      loo_id: 1 ,
+      user_id: 1,
+      comment: "Found a buck on the floor. cool.",
+      rating: 1
+    },{
+      loo_id: 2,
+      user_id: 1,
+      comment: "It was decent",
+      rating: 1
+    }, {
+      loo_id: 2,
+      user_id: 1,
+      comment: "Found a buck on the floor. cool.",
+      rating: 1
+    }
+    ])

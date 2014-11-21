@@ -1,8 +1,8 @@
 require 'rails_helper'
 
 feature "CreateLoos", :type => :feature do
-  scenario "visit new loo page" do
-   
+  scenario "Create a new loo" do
+
   #setup
   visit new_loo_path
 
@@ -12,7 +12,7 @@ feature "CreateLoos", :type => :feature do
   click_button('Add')
 
   #verify
-  expect(loo.name).to be("Starbucks")
+  expect(page).to have_text("Starbucks")
 
-  end 
+  end
 end
