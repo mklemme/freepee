@@ -9,7 +9,10 @@ class Loo < ActiveRecord::Base
   @time2 = yyyy + mm + dd
 
   def self.foursquare(lat,lon)
-
+      @lat = lat.to_f
+      @lon = lon.to_f
+      p lat
+      p lon
       # We need to put client_secret somwhere else. Note that the Foursquare API
       # needs today's date as a parameter.
       client = Foursquare2::Client.new(:client_id => 'ZMGVY0FB55B1F1SGXZUULHJBJASPV4SPACNOQ4TF4BMYCWDG', :client_secret => '0OZJQ5KBQIE1ACR40RRJY2W3FB0ORXMN51GG25LA32ILWJX0', :api_version => @time2.to_s)
@@ -17,7 +20,7 @@ class Loo < ActiveRecord::Base
       # Note that the lat/long is hardcoded. Need to pass the parameters as strings
       # into the 'll' element below. Also Havent' figured out how to add "hotels"
       # as well.
-      response = client.search_venues(:ll => '37.7749300,-122.4194200', :query => 'restaurants', :limit => 3)
+      response = client.search_venues(:ll => "#{@lat},#{@lon}", :query => 'restaurants', :limit => 3)
 
       # Generates an array, loos, for use in loos list
       @loos = response.venues.map do |venue|
