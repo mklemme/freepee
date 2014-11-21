@@ -1,0 +1,46 @@
+	<div class="container">
+		<div class="navbar navbar-default row">
+			<span class=" pull-left col-xs-3" aria-hidden="true"></span>
+			 <span class="brand col-xs-6">freepee.club</a></span>
+			<span class="glyphicon glyphicon-cog pull-right col-xs-2" aria-hidden="true"></span>
+		</div>
+		
+    		<div class="list">
+
+				<% @loos.each do |l| %>
+					<div class="loo">
+						<div class="main_info">
+							<%= l.name %><br>
+							<%= l.address %>
+						</div>
+						<div class="human_factors">
+								:)<%= l.rating %>  
+								4.5mi 
+						</div>
+						
+						 <!-- add table here 
+						 instead of 4 divs -->
+
+						<div class="details">
+							<table style="width:100%">
+							  <tr>
+							    <td><img src="assets/emojis/baby.png"><%= l.baby_changing %></td>
+							    <td><img src="assets/emojis/wheelchair.png"><%= l.handicapped %></td>		
+							  </tr>
+							  <tr>
+							    <td><img src="assets/emojis/dollar.png"><%= l.cost %> </td>
+							    <td><img src="assets/emojis/key.png"><%= l.key %> </td>		
+							  </tr>
+							</table>
+						</div>	
+					</div>
+				<% end %>
+			</div>
+
+		<div class="footer">
+			<button type="button" class="btn btn-warning">back</button>
+			<button type="button" class="btn btn-warning">review</button>
+			<button type="button" class="btn btn-warning">directions</button>
+		</div>
+	</div>
+

@@ -1,7 +1,6 @@
 class LoosController < ApplicationController
   def index
     @loos = Loo.all
-    render"index"
   end
 
   def new
@@ -10,6 +9,11 @@ class LoosController < ApplicationController
 
   def create
   	loo = Loo.create(loo_params)
+  end
+
+  def show
+    @loos = Loo.all
+    render"info"
   end
 
   private
