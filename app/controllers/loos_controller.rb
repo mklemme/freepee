@@ -1,7 +1,7 @@
 class LoosController < ApplicationController
   def index
     @loos = Loo.all
-    @users = User.all
+    render"index"
   end
 
   def new

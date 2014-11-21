@@ -1,8 +1,69 @@
-<% @loos.each do |l| %>
-	<%= l.name %>
-	<%= l.address %>
-<% end %>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<link rel="stylesheet" type="text/css"
+	<title></title>
+</head>
+<body>
+	<div class="container">
+		<div class="navbar">
+				<div class="nav setting"><a href="/settings">S
+				</a></div>
+				<div class="nav logo">L</div>
+				<div class="nav new"><a href="/loos/new">N</div>
+		</a></div>
+		<div class="search">
+			<form>
+				<input type="text" placeholder="Find loos">
+				<input type="submit" value="Search">
+			</form>
+		</div>
+		<div class="list">
 
-<% @users.each do |u| %>
-	<%= u.email %>
-<% end %>
+			<% @loos.each do |l| %>
+				<div class="loo">
+					<div class="primary">
+						<div id="name">
+							<%= l.name %>
+						</div>
+						<div id="address"> 
+							<%= l.address %>
+						</div>
+					</div>
+					<div class="human_factors">
+						<div id="rating"> 
+							:)<%= l.rating %> 
+						</div>
+						<div id="distance"> 
+							4.5mi 
+						</div>
+					</div>
+					<div class="details">
+						<div id="baby"> 
+							B? <%= l.baby_changing %> 
+						</div>
+						<div id="handicap"> 
+							H? <%= l.handicapped %>
+						</div>
+						<div id="cost"> 
+							C? <%= l.cost %> 
+						</div>
+						<div id="key"> 
+							K? <%= l.key %>  
+						</div>
+					</div>	
+				</div>
+			<% end %>
+		</div>
+
+		<div class="filter_button">
+			<input type="button" value="filter">
+		</div>
+	</div>
+
+
+</body>
+</html>
+
+
