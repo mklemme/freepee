@@ -1,11 +1,7 @@
 <h2> Loos: </h2>
 
 <% @loos.each do |l| %>
-	<% if l[:fs_id] && !l[:user_id] %>
-		<p> Name: <%= l[:name] %> </p>
-		<p> Address: <%= l[:address] %> </p>
-		<%= link_to("Foursquare result") %>
-	<% else %>
+	<% if !l[:fs_id] && l[:user_id] %>
 		<p> Name: <%= l[:name] %> </p>
 		<p> Address: <%= l[:address] %> </p>
 		<p> Rating: <%= l[:rating] %> </p>
@@ -14,6 +10,12 @@
 		<p> Cost? <%= l[:cost] %> </p>
 		<p> Key required? <%= l[:key] %> </p>
 		<%= link_to("View loo", loo_path(l[:id])) %>
+	<% else %>
+		<p> Name: <%= l[:name] %> </p>
+		<p> Address: <%= l[:address] %> </p>
+		<%= link_to("Foursquare result") %>
+
 	<% end %>
 	<hr>
 <% end %>
+<%=  %>

@@ -29,11 +29,18 @@ class Loo < ActiveRecord::Base
 
 
       @local_loo = Loo.all.map do |loo|
-        {id: loo.id, name: loo.name, address: loo.address, rating: loo.rating, key: loo.key, baby_changing: loo.baby_changing, handicapped: loo.handicapped, cost: loo.cost, stall: loo.stall, shower: loo.shower, toiletries: loo.toiletries, venue: loo.venue, user_id: loo.user_id}
+        {id: loo.id, name: loo.name, address: loo.address, rating: loo.rating, lat: "37.791003499999995", long: "-122.4013247", key: loo.key, baby_changing: loo.baby_changing, handicapped: loo.handicapped, cost: loo.cost, stall: loo.stall, shower: loo.shower, toiletries: loo.toiletries, venue: loo.venue, user_id: loo.user_id}
       end
 
-      @loo_results = @loos + @local_loo
+      @loo_result = @loos + @local_loo
 
-      @loo_results
+      @loo_results = @loo_result.map do |loo|
+        dist = (lat.to_f - loo[:lat].to_f).abs + (lon.to_f - loo[:long].to_f).abs
+        {id: loo[:id], name: loo[:name], address: loo[:address], dist: dist}
+      end
+      
+      @result = @loo_results.sort_by{|e| e[:dist]}
+
   end
+
 end
