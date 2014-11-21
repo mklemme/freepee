@@ -16,7 +16,11 @@ feature "LooLists", :type => :feature do
     expect(page).to have_text(loo.cost)
     expect(page).to have_text(loo.handicapped)
 
+<<<<<<< HEAD
+  end # end index page
+=======
   end # end loo list page
+>>>>>>> 2324331b19f822cdd4c16d438e5985c7b883abd5
 
   scenario "User visits single loo page" do
 
@@ -37,6 +41,10 @@ feature "LooLists", :type => :feature do
     expect(page).to have_text(loo.toiletries)
     expect(page).to have_text(loo.venue)
 
+<<<<<<< HEAD
+  end # end show page
+
+=======
     expect(page).to have_text(rating.rating)
     expect(page).to have_text(rating.comment)
 
@@ -56,5 +64,17 @@ feature "LooLists", :type => :feature do
     expect(page).to have_text("Starbucks")
 
   end
+>>>>>>> 2324331b19f822cdd4c16d438e5985c7b883abd5
 
 end
+
+
+
+
+
+
+
+
+
+
+
