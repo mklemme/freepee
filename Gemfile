@@ -76,3 +76,7 @@ gem 'pry-rails'
 
 # Figaro to keep our API data secret
 gem 'figaro'
+
+# Foursquare magic
+gem 'foursquare2'
+gem 'rest-client'

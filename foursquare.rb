@@ -18,7 +18,7 @@ def foursquare(lat, lon)
 	# needs today's date as a parameter.
 	client = Foursquare2::Client.new(:client_id => 'ZMGVY0FB55B1F1SGXZUULHJBJASPV4SPACNOQ4TF4BMYCWDG', :client_secret => '0OZJQ5KBQIE1ACR40RRJY2W3FB0ORXMN51GG25LA32ILWJX0', :api_version => time2.to_s)
 
-	# Note that the lat/long is hardcoded. Need to pass the parameters as strings 
+	# Note that the lat/long is hardcoded. Need to pass the parameters as strings
 	# into the 'll' element below. Also Havent' figured out how to add "hotels"
 	# as well.
 	response = client.search_venues(:ll => '37.7749300,-122.4194200', :query => 'restaurants')

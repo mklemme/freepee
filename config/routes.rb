@@ -2,7 +2,7 @@ Rails.application.routes.draw do
 
   resources :loos
   post 'loos/:id/new_rating', to: 'loos#add_comment', as: 'new_rating'
-
+  post 'loos/foursquare', to: 'loos#foursquare_results', as:'foursquare_results'
   devise_for :users
   get 'global/index'
 
@@ -18,7 +18,7 @@ Rails.application.routes.draw do
   # See how all your routes lay out with "rake routes".
 
   # You can have the root of your site routed with "root"
-  root 'loos#index'
+  root 'global#index'
 
 
 
