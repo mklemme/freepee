@@ -1,5 +1,6 @@
 class LoosController < ApplicationController
   def index
+
     @loos = Loo.all
     @users = User.all
   end
@@ -17,6 +18,17 @@ class LoosController < ApplicationController
     redirect_to loo_path(loo)
   end
 
+  def foursquare_results
+    
+    lat = foursquare_params[:lat]
+    lon = foursquare_params[:lon]
+    # redirect_to loos_path
+    @loos = Loo.foursquare(lat,lon)
+
+
+    render :index
+  end
+
   def add_comment
     loo = Loo.find_by_id(params[:id])
     rating = loo.ratings.create(rating_params)
@@ -28,6 +40,10 @@ class LoosController < ApplicationController
   end
 
   private
+
+  def foursquare_params
+    params.require(:fs_data).permit(:lat, :lon)
+  end
 
   def loo_params
   	params.require(:loo).permit(:name, :address)

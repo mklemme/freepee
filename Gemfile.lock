@@ -162,6 +162,9 @@ GEM
       json (~> 1.4)
     responders (1.1.2)
       railties (>= 3.2, < 4.2)
+    rest-client (1.7.2)
+      mime-types (>= 1.16, < 3.0)
+      netrc (~> 0.7)
     rspec (3.1.0)
       rspec-core (~> 3.1.0)
       rspec-expectations (~> 3.1.0)
@@ -242,6 +245,7 @@ DEPENDENCIES
   factory_girl_rails
   figaro
   foursquare (~> 0.3.4)
+  foursquare2
   guard-rspec
   jbuilder (~> 2.0)
   jquery-rails
@@ -252,6 +256,7 @@ DEPENDENCIES
   quiet_assets
   rails (= 4.1.7)
   rb-fsevent
+  rest-client
   rspec-rails
   sass-rails (~> 4.0.3)
   sdoc (~> 0.4.0)
