@@ -1,0 +1,25 @@
+<p> Name: <%= @loo.name %> </p>
+<p> Address: <%= @loo.address %> </p>
+<p> Rating: <%= @loo.rating %> </p>
+<p> Baby changing? <%= @loo.baby_changing %></p>
+<p> Handicapped? <%= @loo.handicapped %> </p>
+<p> Cost? <%= @loo.cost %> </p>
+<p> Key required? <%= @loo.key %> </p>
+<p> Stall type: <%= @loo.stall %></p>
+<p> Showers? <%= @loo.shower %></p>
+<p> toiletries? <%= @loo.toiletries %></p>
+<p> Venue: <%= @loo.venue %></p>
+<hr>
+<%= render :partial => 'comment_form' %>
+<hr>
+
+<% @id = 1 %>
+
+<% @loo.ratings.each do |rating| %>
+  <div id="rating-<%= @id %>">
+    <p> Comment: <%= rating.comment %> </p>
+    <p> Rating: <% if rating.score == 2 %> :) <% elsif rating.score == 1 %> :| <% else %> :(<% end %></p>
+    <hr>
+</div>
+<% @id += 1 %>
+<% end %>
