@@ -1,0 +1,115 @@
+
+
+/*navbar*/
+.navbar {
+	margin-bottom: -10px;
+	background-color: #D0021B;
+	position: relative;
+}
+
+.brand {
+	padding: 6px 0;
+    display: inline-block;
+    font-family: 'Arvo';
+    color: #FFFFFF;
+    font-size: 25px;
+    text-align: center;
+}
+
+.glyphicon {
+	color: #FFFFFF;
+}
+
+.glyphicon-cog {
+	font-size:30px;
+	margin-top: 7px;
+}
+	
+
+/*search*/
+
+.glyphicon-plus {
+	font-size: 30px;
+	margin-top: 7px;
+}
+
+.form-control {
+	display: inline-block;
+}
+
+.btn-default {
+	display: inline-block;
+}
+
+.glyphicon-search {
+	color: #F0AD4E;
+}
+
+.navbar-form {
+	font-size: 50px;
+	margin-bottom: 0px
+}
+
+/*list*/
+
+.list {
+}
+
+.loo {	
+
+}
+
+td {
+	text-align: center;
+}
+
+.main_info {
+	position: relative;
+	display: inline-block;
+	width: 65%;
+	line-height: 90%;
+	float: left;
+	padding-top: 10px;
+}
+
+.human_factors {
+	display: inline-block;
+	width: 10%;
+	line-height: 175%;
+	position: relative;
+	text-align: right;
+	float:left;
+	
+}
+
+.details {
+	display: inline-block;
+	width: 20%;
+	float: right;
+	text-align: right;
+}
+
+#baby {
+	display: inline-block;
+}
+
+#handicap {
+	display: inline-block;
+}
+
+#cost {
+	display: inline-block;
+}
+
+#key {
+	display: inline-block;
+}
+
+
+/*filter*/
+
+.footer {
+	text-align: center;
+	margin-bottom: 30px;
+}
+
