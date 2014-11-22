@@ -2,7 +2,6 @@ class LoosController < ApplicationController
   def index
 
     @loos = Loo.all
-    @users = User.all
   end
 
   def new
@@ -37,6 +36,11 @@ class LoosController < ApplicationController
 
     # rating_info = "##{rating.id.to_s}"
     # redirect_to loo_path(loo,"#{rating_info}")
+  end
+
+  def show
+    @loos = Loo.all
+    render"info"
   end
 
   private
