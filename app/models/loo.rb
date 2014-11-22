@@ -30,7 +30,7 @@ class Loo < ActiveRecord::Base
       # Note that the lat/long is hardcoded. Need to pass the parameters as strings
       # into the 'll' element below. Also Havent' figured out how to add "hotels"
       # as well.
-      response = client.search_venues(:ll => "#{@lat},#{@lon}", :query => 'restaurants', :limit => 3)
+      response = client.search_venues(:ll => "#{@lat},#{@lon}", :query => 'restaurants', :limit => 15)
 
       # Generates an array, loos, for use in loos list
       @loos = response.venues.map do |venue|
