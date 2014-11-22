@@ -19,6 +19,7 @@ class Loo < ActiveRecord::Base
   @time2 = yyyy + mm + dd
 
   def self.foursquare(lat,lon)
+    
       @lat = lat.to_f
       @lon = lon.to_f
       p lat

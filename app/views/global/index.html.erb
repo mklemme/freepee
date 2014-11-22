@@ -16,7 +16,8 @@ var x = document.getElementById("note");
 function getLocation() {
     if (navigator.geolocation) {
         navigator.geolocation.getCurrentPosition(showPosition, showError);
-        $("#note").text("Loading...");
+        $("#note").html("<img src='/images/asset-loading-walking_man.gif'>");
+
     } else {
         x.innerHTML = "We're sorry, your geolocation is not supported by this browser.Please enter your current address";
     }
