@@ -18,12 +18,11 @@ class LoosController < ApplicationController
   end
 
   def foursquare_results
-    
+
     lat = foursquare_params[:lat]
     lon = foursquare_params[:lon]
     # redirect_to loos_path
     @loos = Loo.foursquare(lat,lon)
-
 
     render :index
   end
