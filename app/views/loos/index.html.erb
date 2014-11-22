@@ -1,9 +1,8 @@
-<<<<<<< HEAD
 <div class="container">
 	<div class="navbar navbar-default row">
 		<span class="glyphicon glyphicon-cog pull-left col-xs-3" aria-hidden="true"></span>
 		<span class="brand col-xs-6">freepee.club</a></span>
-		<span class="glyphicon glyphicon-plus pull-right col-xs-2" aria-hidden="true"></span>
+		<a href="/loos/new"><span class="glyphicon glyphicon-plus pull-right col-xs-2" aria-hidden="true"></span></a>
 	</div>
 	<form class="navbar-form" role="search">
 		<div class="input-group">
@@ -45,8 +44,23 @@
 				</div>
 				<%= link_to("View loo", loo_path(l[:id])) %>
 				<% else %>
-				<p> Name: <%= l[:name] %> </p>
-				<p> Address: <%= l[:address] %> </p>
+				<div class="main_info">
+					<p> Name: <%= l[:name] %> </p>
+					<p> Address: <%= l[:address] %> </p>
+				</div>
+				<div class="details">
+						<table style="width:100%">
+							<tr>
+								<td><img src="assets/emojis/baby.png"> <%= l[:baby_changing] %></td>
+								<td><img src="assets/emojis/wheelchair.png"><%= l[:handicapped] %></td>
+							</tr>
+							<tr>
+								<td><img src="assets/emojis/dollar.png"><%= l[:cost] %></td>
+								<td><img src="assets/emojis/key.png"><%= l[:key] %></td>
+							</tr>
+						</table>
+					</div>
+
 				<%= link_to("Foursquare result") %>
 
 				<% end %>
@@ -64,5 +78,3 @@
 		<button type="button" class="btn btn-warning">filter</button>
 	</div>
 </div>
-
->>>>>>> ffe956a56783e6296032882b5baed917d2261000

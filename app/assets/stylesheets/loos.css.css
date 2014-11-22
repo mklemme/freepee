@@ -67,8 +67,9 @@ td {
 	position: relative;
 	display: inline-block;
 	width: 65%;
-	line-height: 175%;
+	line-height: 90%;
 	float: left;
+	padding-top: 10px;
 }
 
 .human_factors {
