@@ -2,14 +2,15 @@
 <html>
 <head>
   <title>FreePee Club</title>
+  <link rel="stylesheet" type="text/css" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css">
+  <link href='http://fonts.googleapis.com/css?family=Arvo' rel='stylesheet' type='text/css'>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application'%>
   <%= csrf_meta_tags %>
-
-<script type="text/javascript"
-      src="https://maps.googleapis.com/maps/api/js?key=<%=Figaro.env.google_map_key%>">
-    </script>
-
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <script type="text/javascript"
+  src="https://maps.googleapis.com/maps/api/js?key=<%=Figaro.env.google_map_key%>">
+  </script>
 </head>
 <body>
 <%= render :partial => 'partials/header' %>
@@ -17,4 +18,5 @@
 <%= yield %>
 
 </body>
+<script type="text/javascript" src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
 </html>

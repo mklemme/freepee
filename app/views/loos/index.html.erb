@@ -1,21 +1,80 @@
-<h2> Loos: </h2>
+<div class="container">
+	<div class="navbar navbar-default row">
+		<span class="glyphicon glyphicon-cog pull-left col-xs-3" aria-hidden="true"></span>
+		<span class="brand col-xs-6">freepee.club</a></span>
+		<a href="/loos/new"><span class="glyphicon glyphicon-plus pull-right col-xs-2" aria-hidden="true"></span></a>
+	</div>
+	<form class="navbar-form" role="search">
+		<div class="input-group">
+			<input type="text" class="form-control" placeholder="Search" name="q">
+			<div class="input-group-btn">
+				<button class="btn btn-default" type="submit"><i class="glyphicon glyphicon-search"></i></button>
+			</div>
+		</div>
+	</form>
 
-<% @loos.each do |l| %>
-	<% if !l[:fs_id] && l[:user_id] %>
-		<p> Name: <%= l[:name] %> </p>
-		<p> Address: <%= l[:address] %> </p>
-		<p> Rating: <%= l[:rating] %> </p>
-		<p> Baby changing? <%= l[:baby_changing] %></p>
-		<p> Handicapped? <%= l[:handicapped] %> </p>
-		<p> Cost? <%= l[:cost] %> </p>
-		<p> Key required? <%= l[:key] %> </p>
-		<%= link_to("View loo", loo_path(l[:id])) %>
-	<% else %>
-		<p> Name: <%= l[:name] %> </p>
-		<p> Address: <%= l[:address] %> </p>
-		<%= link_to("Foursquare result") %>
+	<div class="panel panel-default">
+		<div class="panel-body">
+			<div class="list">
 
-	<% end %>
-	<hr>
-<% end %>
-<%=  %>
+
+				<% @loos.each do |l| %>
+				<% if !l[:fs_id] && l[:user_id] %>
+				<div class="loo">
+					<div class="main_info">
+						<p> Name: <%= l[:name] %> </p>
+						<p> Address: <%= l[:address] %> </p>
+					</div>
+					<div class="human_factors">
+						<p> :) <%= l[:rating] %> </p>
+						<p> 4.5mi: <%= l[:distance] %> </p>
+					</div>
+					<div class="details">
+						<table style="width:100%">
+							<tr>
+								<td><img src="assets/emojis/baby.png"> <%= l[:baby_changing] %></td>
+								<td><img src="assets/emojis/wheelchair.png"><%= l[:handicapped] %></td>
+							</tr>
+							<tr>
+								<td><img src="assets/emojis/dollar.png"><%= l[:cost] %></td>
+								<td><img src="assets/emojis/key.png"><%= l[:key] %></td>
+							</tr>
+						</table>
+					</div>
+				</div>
+				<%= link_to("View loo", loo_path(l[:id])) %>
+				<% else %>
+				<div class="main_info">
+					<p> Name: <%= l[:name] %> </p>
+					<p> Address: <%= l[:address] %> </p>
+				</div>
+				<div class="details">
+						<table style="width:100%">
+							<tr>
+								<td><img src="assets/emojis/baby.png"> <%= l[:baby_changing] %></td>
+								<td><img src="assets/emojis/wheelchair.png"><%= l[:handicapped] %></td>
+							</tr>
+							<tr>
+								<td><img src="assets/emojis/dollar.png"><%= l[:cost] %></td>
+								<td><img src="assets/emojis/key.png"><%= l[:key] %></td>
+							</tr>
+						</table>
+					</div>
+
+				<%= link_to("Foursquare result") %>
+
+				<% end %>
+				<hr>
+				<% end %>
+				<%=  %>
+			</div>
+
+
+
+		</div>
+	</div>
+
+	<div class="footer">
+		<button type="button" class="btn btn-warning">filter</button>
+	</div>
+</div>
