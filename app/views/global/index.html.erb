@@ -9,6 +9,7 @@
 engine();
 function engine(){
   getLocation();
+  $("#note").html("<img src='/images/asset-loading-walking_man.gif'>");
 
 }
 var x = document.getElementById("note");
@@ -16,7 +17,8 @@ var x = document.getElementById("note");
 function getLocation() {
     if (navigator.geolocation) {
         navigator.geolocation.getCurrentPosition(showPosition, showError);
-        $("#note").text("Loading...");
+
+
     } else {
         x.innerHTML = "We're sorry, your geolocation is not supported by this browser.Please enter your current address";
     }
@@ -61,9 +63,8 @@ function findClosest(lat, lon){
         }
       },
       success:function(msg){
-
-        $( "html" ).empty();
-        $( "html" ).append( msg );
+        // document.body.innerHTML(msg)
+        $( "html" ).html( msg );
       },
 
       error:function(errormessage){
