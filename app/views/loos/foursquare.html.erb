@@ -1,16 +1,18 @@
-<p><%= @loos.name %></p>
-<p><%= @loos.address %></p>
-<p><%= @loos.city %>, <%= @loos.state %> <%= @loos.postalCode %></p>
+<!-- I'm the foursquare page -->
+<p><%= @loo.name %></p>
+<p><%= @loo.address %></p>
 
-<p>We need information about this place's bathroom. Please rate it!</p>
+<div>
+	<h3>Help us improve the information about this location!</h3>
 
-<%= form_for @loo do |f| %>
-	<div class="field">
-		<%= f.label :name %><br />
-		<%= f.text_field(:name, autofocus: true) %>
-	</div>
+	<form>
+		<%= form_for @loo do |f| %>
+			<%= f.label :name, {:class => "shmee"} %>
+			<%= f.text_field :name %>
+			<%= f.label :address %>
+			<%= f.text_field :address %>
 
-	<div class="actions">
-		<%= f.submit "Add" %>
-	</div>
-<% end %>
+		<% end %>
+	</form>
+
+</div>

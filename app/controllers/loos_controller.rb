@@ -1,6 +1,5 @@
 class LoosController < ApplicationController
   def index
-
     @loos = Loo.all
   end
 
@@ -10,6 +9,8 @@ class LoosController < ApplicationController
 
   def show
     @loo = Loo.find_by_id(params[:id])
+
+    render :foursquare
   end
 
   def create
@@ -18,7 +19,6 @@ class LoosController < ApplicationController
   end
 
   def foursquare_results
-
     lat = foursquare_params[:lat]
     lon = foursquare_params[:lon]
     # redirect_to loos_path
@@ -37,10 +37,10 @@ class LoosController < ApplicationController
     # redirect_to loo_path(loo,"#{rating_info}")
   end
 
-  def show
-    @loos = Loo.all
-    render"info"
-  end
+  # def show
+  #   @loos = Loo.all
+  #   render "info"
+  # end
 
   private
 
