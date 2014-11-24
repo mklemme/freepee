@@ -3,6 +3,8 @@ Rails.application.routes.draw do
   resources :loos
   post 'loos/:id/new_rating', to: 'loos#add_comment', as: 'new_rating'
   post 'loos/foursquare', to: 'loos#foursquare_results', as:'foursquare_results'
+  match '/contacts', to: 'contacts#new', via: 'get' 
+  resources "contacts", only: [:new, :create]
   devise_for :users
   get 'global/index'
 

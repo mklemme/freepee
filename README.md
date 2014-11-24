@@ -17,7 +17,8 @@ Freepee uses these gems:
 * [Figaro](https://github.com/laserlemon/figaro): keeps API information secure for pushing code to Github
 * [Pry](https://github.com/rweng/pry-rails): For development
 * [Bootstrap](https://github.com/seyhunak/twitter-bootstrap-rails): includes Twitter bootstrap in our project
-* [Yelp](https://github.com/Yelp/yelp-ruby): the Yelp API wrapper for rails
+* [Foursquare2](https://github.com/mattmueller/foursquare2): the Foursquare API for finding venues with lat/long input
+* [Mailform](https://github.com/plataformatec/mail_form): sends email straight from a form. 
 
 ## Getting started
 

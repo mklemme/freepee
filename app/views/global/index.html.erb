@@ -58,7 +58,7 @@ function getLocation() {
     if (navigator.geolocation) {
         navigator.geolocation.getCurrentPosition(showPosition, showError);
     } else {
-        x.innerHTML = "We're sorry, your geolocation is not supported by this browser.Please enter your current address";
+        x.innerHTML = "We're sorry, your geolocation is not supported by this browser. Please enter your current address";
     }
 }
 
@@ -76,7 +76,7 @@ function showPosition(position) {
 function showError(error) {
     switch(error.code) {
         case error.PERMISSION_DENIED:
-            x.innerHTML = "We're sorry, you have denied the request for Geolocation.Please enter your address, we'll search using that."
+            x.innerHTML = "We're sorry, you have denied the request for Geolocation. Please enter your address, we'll search using that."
             break;
         case error.POSITION_UNAVAILABLE:
             x.innerHTML = "We're sorry, your location information is unavailable. Please enter your address, we'll search using that."
