@@ -4,14 +4,14 @@ class Loo < ActiveRecord::Base
 
 
   validates :name, presence: true
-  validates :lat, presence: true
-  validates :long, presence: true
+  # validates :lat, presence: true
+  # validates :long, presence: true
   validates :address, presence: true
-  validates :city, presence: true
-  validates :state, presence: true
-  validates :postalCode, presence: true
-  validates :country, presence: true
-
+  # validates :city, presence: true
+  # validates :state, presence: true
+  # validates :postalCode, presence: true
+  # validates :country, presence: true
+  
   time1 = Time.now
   yyyy = time1.year.to_s
   mm = '%02d' % time1.month.to_s

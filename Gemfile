@@ -52,6 +52,7 @@ group :development do
   gem "pry-byebug"
   gem "quiet_assets"
   gem "awesome_print", require: "ap"
+  gem 'pry-rails'
 end
 
 # Use ActiveModel has_secure_password
@@ -73,9 +74,6 @@ gem 'devise'
 
 # Authorization
 gem 'cancancan', '~> 1.9'
-
-# Pry
-gem 'pry-rails'
 
 # Figaro to keep our API data secret
 gem 'figaro'
