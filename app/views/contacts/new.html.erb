@@ -1,0 +1,30 @@
+<div class="container">
+  <div class="navbar navbar-default row">
+    <span class=" pull-left col-xs-3" aria-hidden="true"></span>
+    <span class="brand col-xs-6">freepee.club</a></span>
+    <span class="glyphicon glyphicon-cog pull-right col-xs-2" aria-hidden="true"></span>
+  </div>
+
+  <div>
+    <h3>Send a Message to FreePee Club</h3>
+
+    <form>
+      <%= simple_form_for @contact, :html => {:class => 'form-horizontal' } do |f| %>
+      <div class="form-group">
+        <label for="name">Name</label>
+        <%= f.input :name, label: false, :input_html => {:class => 'form-control'} %>
+      </div>
+      <div class="form-group">
+        <label for="email">Email</label>
+        <%= f.input :email, label: false, :required => true, :input_html => {:class => 'form-control'} %>
+      </div>
+      <div class="form-group">
+      <label for="message">Your message</label>
+      <%= f.input :message, label: false, :as => :text, :required => true, :input_html => {:class => 'form-control'} %>
+      </div>
+      <br />
+      <%= f.button :submit, 'Send message', :class=> "btn btn-primary" %>
+      <% end %>
+    </form>
+  </div>
+</div>
