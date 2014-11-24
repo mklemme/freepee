@@ -40,6 +40,8 @@
 
 .form-control {
 	display: inline-block;
+	width: 50%;
+	margin-bottom: 20px
 }
 
 .btn-default {
@@ -122,7 +124,7 @@ td {
 }
 
 hr {
-	clear: both;
+	clear: both;ß
 }
 
 /*filter*/
@@ -135,23 +137,49 @@ hr {
 /*homepage*/
 
 .scaling-img{
-	width: 300px;
+	width: 350px;
 }
 
 .note{
 	position:absolute;
 	border-radius: 50px;
+	position: fixed; /* or absolute */
+  	top: 50%;
+  	left: 50%;
 }
 
 .gif-container{
 	position: relative;
 	display: inline-block;
 	vertical-align: top;
-	height: 300px;
-	width: 300px;
+	height: 350px;
+	width: 350px;
 	margin-right: -4px; 
 	position: center;
 	border-radius: 50px;
+}
+
+#launchButton{
+	margin-top: 70%;
+	border-radius: 100px;
+	height: 154px;
+	background-color: rgb(237, 135, 0);
+	border: none;
+	outline: none;
+	cursor: pointer;
+}
+
+.home-page-container {
+	text-align: center;
+}
+
+.current-location-btn {
+	display: block;
+	margin: 1em auto;
+}
+
+#esampleInputPassword2 {
+	margin-bottom: 19px;
 }
 
 

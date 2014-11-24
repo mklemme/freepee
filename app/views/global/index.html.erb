@@ -1,4 +1,4 @@
-<div class="container">
+<div class="container home-page-container">
   <div class="navbar navbar-default row">
     <span class="brand col-xs-6">freepee.club</a></span>
   </div>
@@ -16,11 +16,9 @@
         <button type="button" id="modal-close" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
         <h4 class="modal-title" id="myModalLabel">How can we find you?</h4>
       </div>
-      <span class="address-inline">
-      <button type="button" class="btn btn-primary" onclick="engine()">Use current location</button>
+      <button type="button" class="btn btn-primary current-location-btn" onclick="engine()">Use current location</button>
       <input class="form-control" id="exampleInputPassword2" placeholder="Enter address here" name="address" autofocus>
       <input type="submit" class="btn btn-primary" value="Search by address" onclick="customLocation()">
-      </span>
     </div>
   </div>
 </div>
@@ -45,21 +43,22 @@ function engine() {
 }
 //find lat lon location by address input
 function customLocation() {
-
-            var geocoder = new google.maps.Geocoder();
-            var address = $("#exampleInputPassword2.form-control").val();
-            geocoder.geocode({ 'address': address }, function (results, status) {
-                if (status == google.maps.GeocoderStatus.OK) {
-                    setTimeout(getLocation, 1500);
-                    var lat = results[0].geometry.location.lat();
-                    var lon = results[0].geometry.location.lng();
-                    findClosest(lat, lon);
-                $("#note").html("<img src='/images/asset-loading-walking_man.gif' class='scaling-img'>");
-                } else {
-                    alert("Request failed - please enter a valid address.");
-                }
-            });
-        }
+  $("#launchButton").hide();
+  $("#modal-close").click();
+  var geocoder = new google.maps.Geocoder();
+  var address = $("#exampleInputPassword2.form-control").val();
+  geocoder.geocode({ 'address': address }, function (results, status) {
+      if (status == google.maps.GeocoderStatus.OK) {
+          setTimeout(getLocation, 1500);
+          var lat = results[0].geometry.location.lat();
+          var lon = results[0].geometry.location.lng();
+          findClosest(lat, lon);
+      $("#note").html("<img src='/images/asset-loading-walking_man.gif' class='scaling-img'>");
+      } else {
+          alert("Request failed - please enter a valid address.");
+      }
+    });
+  }
   // reverseGeo(data);
   // render gif
 
