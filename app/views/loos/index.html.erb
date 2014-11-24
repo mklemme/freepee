@@ -57,7 +57,7 @@
 					<p> Address: <%= l[:address] %> </p>
 				</div>
 
-				<%= link_to("Foursquare result", {:controller => :loos, :action => :foursquare_single}, :params => {:fs_id => l[:fs_id]} ) %>
+				<%= link_to("Foursquare result", foursquare_single_path(l[:fs_id]) ) %>
 
 				<% end %>
 				<hr>
