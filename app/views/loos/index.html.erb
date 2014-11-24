@@ -8,6 +8,7 @@
 
 
 				<% @loos.each do |l| %>
+				<a href="/loos/<%=l.id%>">
 				<% if !l[:fs_id] && l[:user_id] %>
 				<div class="loo">
 					<div class="main_info">
@@ -54,6 +55,7 @@
 
 				<% end %>
 				<hr>
+				</a>
 				<% end %>
 				<%=  %>
 			</div>
