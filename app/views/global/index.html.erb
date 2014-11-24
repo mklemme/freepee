@@ -1,28 +1,67 @@
-<h1>Global#index</h1>
-<p>Find me in app/views/global/index.html.erb</p>
+<div class="container">
+  <div class="navbar navbar-default row">
+    <span class="brand col-xs-6">freepee.club</a></span>
+  </div>
 
-<!-- this text changes if we're unable to geolocate you -->
-<p id="note">We're tracking you</p>
-<!-- this is the map -->
+<!-- Button trigger modal -->
+<br>
+<button type="button" id="launchButton" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal">
+  Launch freepee
+</button>
+<!-- Modal -->
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" id="modal-close" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+        <h4 class="modal-title" id="myModalLabel">How can we find you?</h4>
+      </div>
+      <div class="modal-footer">
+        <input type="text">
+        <button type="button" class="btn btn-default">Search by address</button>
+        <button type="button" class="btn btn-primary" onclick="engine()">Use current location</button>
+      </div>
+    </div>
+  </div>
+</div>
+<br>
+<div class="loading-text">
 
+</div>
+<br>
+  <div class="gif-container">
+    <!-- this text changes if we're unable to geolocate you -->
+    <span id="note"></span> 
+  </div>
+</div>
 <script>
-engine();
-function engine(){
-  getLocation();
-  $("#note").html("<img src='/images/asset-loading-walking_man.gif'>");
-
+// engine();
+function engine() {
+  setTimeout(getLocation, 1500);
+  $("#launchButton").hide();
+  $("#modal-close").click();
+  $("#note").html("<img src='/images/asset-loading-walking_man.gif' class='scaling-img'>");
+  $("#loading-text").innerHTML("Please hold on...we're finding your location...");
+}
+function customLocation() {
+  // get data from form
+  // reverseGeo(data);
+  // render gif
+}
+function reverseGeo(data) {
+  // find position using data
+  // showPosition(position)
 }
 var x = document.getElementById("note");
 //finding geolocation and sentting text at top of page based on results, calling the showPosition function which gets coords
 function getLocation() {
     if (navigator.geolocation) {
         navigator.geolocation.getCurrentPosition(showPosition, showError);
-
-
     } else {
         x.innerHTML = "We're sorry, your geolocation is not supported by this browser.Please enter your current address";
     }
 }
+
 //finding coords, calling other functions
 function showPosition(position) {
     var lat = position.coords.latitude;
