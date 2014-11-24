@@ -9,12 +9,10 @@ class LoosController < ApplicationController
 
   def show
     @loo = Loo.find_by_id(params[:id])
-
-    render :foursquare
   end
 
   def create
-  	loo = Loo.create(loo_params)
+    loo = Loo.create(loo_params)
     redirect_to loo_path(loo)
   end
 
@@ -23,24 +21,16 @@ class LoosController < ApplicationController
     lon = foursquare_params[:lon]
     # redirect_to loos_path
     @loos = Loo.foursquare(lat,lon)
-
     render :index
   end
 
   def add_comment
     loo = Loo.find_by_id(params[:id])
     rating = loo.ratings.create(rating_params)
-
     redirect_to :back
-
     # rating_info = "##{rating.id.to_s}"
     # redirect_to loo_path(loo,"#{rating_info}")
   end
-
-  # def show
-  #   @loos = Loo.all
-  #   render "info"
-  # end
 
   private
 
@@ -49,7 +39,7 @@ class LoosController < ApplicationController
   end
 
   def loo_params
-  	params.require(:loo).permit(:name, :address)
+    params.require(:loo).permit(:name, :address)
   end
 
   def rating_params
