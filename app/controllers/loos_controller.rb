@@ -24,6 +24,17 @@ class LoosController < ApplicationController
     render :index
   end
 
+  def foursquare_single
+
+    fs_id = params[:id]
+    @loo = Loo.foursquare_single(fs_id)
+
+    render :foursquare
+
+
+    # render :index
+  end
+
   def add_comment
     loo = Loo.find_by_id(params[:id])
     rating = loo.ratings.create(rating_params)
@@ -36,6 +47,10 @@ class LoosController < ApplicationController
 
   def foursquare_params
     params.require(:fs_data).permit(:lat, :lon)
+  end
+
+  def foursquare_single_param
+    params.require(:loo).permit(:fs_id)
   end
 
   def loo_params
