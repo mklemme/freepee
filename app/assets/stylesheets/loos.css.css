@@ -133,3 +133,28 @@ hr {
 	text-align: center;
 	margin-bottom: 30px;
 }
+
+
+/*homepage*/
+
+.scaling-img{
+	width: 300px;
+}
+
+.note{
+	position:absolute;
+	border-radius: 50px;
+}
+
+.gif-container{
+	position: relative;
+	display: inline-block;
+	vertical-align: top;
+	height: 300px;
+	width: 300px;
+	margin-right: -4px; 
+	position: center;
+	border-radius: 50px;
+}
+
+
