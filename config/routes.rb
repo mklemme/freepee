@@ -1,9 +1,18 @@
 Rails.application.routes.draw do
 
   resources :loos
+<<<<<<< HEAD
   post '/loos/:id/new_rating', to: 'loos#add_comment', as: 'new_rating'
   get '/loos/foursquare', to: 'loos#foursquare_results', as:'foursquare_results'
   match '/contacts', to: 'contacts#new', via: 'get' 
+=======
+  post 'loos/:id/new_rating', to: 'loos#add_comment', as: 'new_rating'
+  post 'loos/foursquare', to: 'loos#foursquare_results', as:'foursquare_results'
+  get 'loos/fs/:fs_id', to: 'loos#foursquare_single', as: 'foursquare_single'
+  post 'loos/foursquare_single', to: 'loos#foursquare_single_action', as: 'foursquare_single_action'
+
+  match '/contacts', to: 'contacts#new', via: 'get'
+>>>>>>> 70c04c93128a2ead64d8874042fd4dca1c1f6473
   resources "contacts", only: [:new, :create]
   devise_for :users
   get 'global/index'

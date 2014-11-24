@@ -19,11 +19,9 @@ class Loo < ActiveRecord::Base
   @time2 = yyyy + mm + dd
 
   def self.foursquare(lat,lon)
-    
+
       @lat = lat.to_f
       @lon = lon.to_f
-      p lat
-      p lon
       # We need to put client_secret somwhere else. Note that the Foursquare API
       # needs today's date as a parameter.
       client = Foursquare2::Client.new(:client_id => 'ZMGVY0FB55B1F1SGXZUULHJBJASPV4SPACNOQ4TF4BMYCWDG', :client_secret => '0OZJQ5KBQIE1ACR40RRJY2W3FB0ORXMN51GG25LA32ILWJX0', :api_version => @time2.to_s)
@@ -47,10 +45,15 @@ class Loo < ActiveRecord::Base
 
       @loo_results = @loo_result.map do |loo|
         dist = (lat.to_f - loo[:lat].to_f).abs + (lon.to_f - loo[:long].to_f).abs
-        {id: loo[:id], name: loo[:name], address: loo[:address], dist: dist}
+        {id: loo[:id], user_id: loo[:user_id], fs_id: loo[:fs_id], name: loo[:name], address: loo[:address], dist: dist, key: loo[:key], baby_changing: loo[:baby_changing], handicapped: loo[:handicapped], cost: loo[:cost]}
       end
-
       @result = @loo_results.sort_by{|e| e[:dist]}
 
+  end
+
+  def self.foursquare_single(fs_id)
+    # Look up forusquare venue by fs_id
+
+    # return result
   end
 end
