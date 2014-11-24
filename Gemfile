@@ -22,9 +22,10 @@ gem 'jbuilder', '~> 2.0'
 # bundle exec rake doc:rails generates the API under doc/api.
 gem 'sdoc', '~> 0.4.0',          group: :doc
 
-# Bootstrap and simple_form gems
+# Bootstrap, simple_form and mail_form gems
 gem "twitter-bootstrap-rails"
 gem "simple_form"
+gem "mail_form"
 
 # Foursquare
 gem 'foursquare', '~> 0.3.4'
