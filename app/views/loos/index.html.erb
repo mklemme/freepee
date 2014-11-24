@@ -8,26 +8,33 @@
 
 
 				<% @loos.each do |l| %>
-				<a href="/loos/<%=l.id%>">
-				<% if !l[:fs_id] && l[:user_id] %>
+				<% if l[:user_id] %>
 				<div class="loo">
 					<div class="main_info">
 						<p> <%= l[:name] %> </p>
 						<p> <%= l[:address] %> </p>
 					</div>
 					<div class="human_factors">
-						<p> :) <%= l[:rating] %> </p>
-						<p> 4.5mi: <%= l[:distance] %> </p>
+						<p> <%= l[:rating] %> </p>
+						<p> <%= l[:dist] %> </p>
 					</div>
 					<div class="details">
 						<table style="width:100%">
 							<tr>
+								<% if l[:baby_changing] == true %>
 								<td><img src="assets/emojis/baby.png"> <%= l[:baby_changing] %></td>
+								<% end %>
+								<% if l[:handicapped] ==  true %>
 								<td><img src="assets/emojis/wheelchair.png"><%= l[:handicapped] %></td>
+								<% end %>
 							</tr>
 							<tr>
+								<% if l[:cost] != "free" %>
 								<td><img src="assets/emojis/dollar.png"><%= l[:cost] %></td>
+								<% end %>
+								<% if l[:key] == true %>
 								<td><img src="assets/emojis/key.png"><%= l[:key] %></td>
+								<% end %>
 							</tr>
 						</table>
 					</div>
@@ -38,20 +45,8 @@
 					<p> <%= l[:name] %> </p>
 					<p> <%= l[:address] %> </p>
 				</div>
-				<div class="details">
-						<table style="width:100%">
-							<tr>
-								<td><img src="assets/emojis/baby.png"> <%= l[:baby_changing] %></td>
-								<td><img src="assets/emojis/wheelchair.png"><%= l[:handicapped] %></td>
-							</tr>
-							<tr>
-								<td><img src="assets/emojis/dollar.png"><%= l[:cost] %></td>
-								<td><img src="assets/emojis/key.png"><%= l[:key] %></td>
-							</tr>
-						</table>
-				</div>
 
-				<%= link_to("Foursquare result") %>
+				<%= link_to("Foursquare result", {:controller => :loos, :action => :foursquare_single}, :params => {:fs_id => l[:fs_id]} ) %>
 
 				<% end %>
 				<hr>
