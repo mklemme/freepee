@@ -73,7 +73,7 @@ body{
 }
 
 .review-table td {
-	
+
 	width: 300px;
 	padding: 3px;
 	text-align: left;
@@ -192,7 +192,7 @@ hr {
 #esampleInputPassword2 {
 	margin-bottom: 19px;
 }
-<<<<<<< HEAD
+
 
 /*REVIEW SUBMIT
 */
@@ -205,5 +205,3 @@ hr {
 width:100%;
 height:666px;
 }
-=======
->>>>>>> 95d15830218bc91e07cbadefdf9e40a4eb21cdb2
