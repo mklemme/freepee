@@ -67,8 +67,17 @@
 
 }
 
-td {
-	text-align: center;
+body{
+	font-family: "avenir";
+	font-size: 16px;
+}
+
+.review-table td {
+	
+	width: 300px;
+	padding: 3px;
+	text-align: left;
+	width: 300px;
 }
 
 .main_info {
@@ -184,6 +193,9 @@ hr {
 	margin-bottom: 19px;
 }
 
+/*REVIEW SUBMIT
+*/
 
-
-
+#reviewSubmitButton {
+	margin: 0 auto;
+}

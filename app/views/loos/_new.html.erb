@@ -21,45 +21,48 @@
     <%= radio_button_tag(:rating, "good") %>
     <%= label_tag(:rating_good, "(:") %>  
 </div>
-
-<div class="form-group">
-  <%= f.check_box(:key) %> <span> </span>
-  <%= f.label :Requires_key %>
+<table class="review-table">
+  <tr>
+    <td>
+      <%= f.check_box(:key) %>
+      <%= f.label :Requires_key %>
+    </td>
+    <td>
+      <%= f.check_box(:baby_changing) %>
+      <%= f.label :Baby_changing %>
+    </td>
+  </tr>
+  <tr>
+    <td>
+      <%= f.check_box(:handicapped) %>
+      <%= f.label :Handicapped %>
+    </td>
+    <td>
+      <%= f.check_box(:cost) %>
+      <%= f.label :Pay_to_use %>
+    </td>
+    <tr>
+      <td>
+        <%= f.check_box(:stall) %>
+        <%= f.label :Stalls %>
+      </td>
+      <td>  
+        <%= f.check_box(:shower) %>
+        <%= f.label :Shower %>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <%= f.check_box(:toiletries) %>
+          <%= f.label :Toiletries %>
+        </td>
+        <td> 
+        <div class="Actions" id="reviewSubmitButton">
+  <%= f.submit "Add", {:class => "btn btn-primary" } %>
 </div>
+        </td>
+      </tr>
+    </table>
 
-<div class="form-group">
-  <%= f.check_box(:baby_changing) %> <span> </span>
-  <%= f.label :Baby_changing %>
-</div>
-
-<div class="form-group">
-  <%= f.check_box(:handicapped) %><span> </span>
-  <%= f.label :Handicapped %>
-</div>
-
-<div class="form-group">
-  <%= f.check_box(:cost) %> <span> </span>
-  <%= f.label :Pay_to_use %>
-</div>
-
-<div class="form-group">
-    <%= f.check_box(:stall) %><span> </span>
-    <%= f.label :Stalls %>
-  </div>
-
-  <div class="form-group">
-    <%= f.check_box(:shower) %><span> </span>
-    <%= f.label :Shower %>
-  </div>
-
-  <div class="form-group">
-    <%= f.check_box(:toiletries) %><span> </span>
-    <%= f.label :Toiletries %>
-  </div>
-
-
-<div class="Actions">
-  <%= f.submit "Add", {:class => "btn btn-primary"} %>
-</div>
 </div>
 <% end %>
