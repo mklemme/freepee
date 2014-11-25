@@ -1,19 +1,31 @@
 
 <%= render :partial => 'partials/index' %>
-<br>
-<div class="keyinfo">
-<h1><%= @loo.name %></h1>
-<p ></p>
-<p><%= @loo.address %></p>
-<%= link_to("Map", show_map_path( lat: @loo.lat, lon: @loo.lon) ) %>
+<div class="row">
+  <div class="col-1-3 card textCenter">
+    <div class="cardHeader tall">
+      <img src="<%= @loo_photo %>" alt="" class="venue-img" />
+      <h1><%= @loo.name %></h1>
+      <p class="address">
 
+          <span><%= @loo.address %></span>
+          <span><%= @loo.city %></span>
+          <span><%= @loo.country %></span>
+          <span><%= @loo.postalCode %></span>
+      </p>
+      <p>
+        <a href="tel:<%= @loo_hash['contact']['phone'] %>"><%= @loo_hash['contact']['phone'] %></a>
+      </p>
+    </div>
+    <div class="cardContent textCenter tall">
+      <%= link_to("Get directions", show_map_path( lat: @loo.lat, lon: @loo.lon), class: "button" ) %>
+    </div>
+  </div>
+  <div class="col-2-3 card">
+    <div class="cardHeader">
+      This loo isn't confirmed yet. Add it now!
+    </div>
+    <div class="cardContent">
+      <%= render :partial => 'new' %>
+    </div>
+  </div>
 </div>
-<hr>
-<h3>REVIEW</h3>
-<p>Please add information about this loo!</p>
-
-</div>
-<div class="review-form">
-<%= render :partial => 'new' %>
-<div>
-

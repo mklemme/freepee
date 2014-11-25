@@ -10,7 +10,7 @@ class LoosController < ApplicationController
 
   def show
     @loo = Loo.find_by_id(params[:id])
-    
+
   end
 
   def show_map
@@ -38,17 +38,18 @@ class LoosController < ApplicationController
 
     fs_id = params[:fs_id]
 
-    loo_hash = Loo.foursquare_single(fs_id)
+    @loo_hash = Loo.foursquare_single(fs_id)
+    @loo_photo = @loo_hash['photos']['groups'].first['items'].first['prefix'] +"width960"+ @loo_hash['photos']['groups'].first['items'].first['suffix']
     @loo = Loo.new
-    @loo.name = loo_hash['name']
-    @loo.address = loo_hash['location']['address']
+    @loo.name = @loo_hash['name']
+    @loo.address = @loo_hash['location']['address']
     # @loo.fs_id = params[:fs_id]
-    @loo.city = loo_hash['location']['city']
-    @loo.state = loo_hash['location']['state']
-    @loo.postalCode = loo_hash['location']['zip']
-    @loo.lat = loo_hash['location']['lat']
-    @loo.lon = loo_hash['location']['lng']
-  
+    @loo.city = @loo_hash['location']['city']
+    @loo.state = @loo_hash['location']['state']
+    @loo.postalCode = @loo_hash['location']['postalCode']
+    @loo.lat = @loo_hash['location']['lat']
+    @loo.lon = @loo_hash['location']['lng']
+
     render :foursquare
 
 

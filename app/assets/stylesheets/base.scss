@@ -1,0 +1,115 @@
+body{
+  background: #f1f1f1;
+}
+
+
+[class*='col-'] { float: left; padding: 0 5px; }
+[class*='col-']:last-of-type { float: right; }
+
+.row { max-width: 1200px; margin: auto; }
+.row:after { content: ""; display: table; clear: both; }
+.row .col-1 { width: 100%; }
+.row .col-1-2 { width: 50%; }
+.row .col-1-3 { width: 33.3%; }
+.row .col-2-3 { width: 66.66667%; }
+.row .col-1-4 { width: 25%; }
+.row .col-3-4 { width: 75%; }
+.row .col-1-5 { width: 20%; }
+.row .col-4-5 { width: 80%; }
+.row .col-1-6 { width: 16.66667%; }
+.row .col-5-6 { width: 83.33333%; }
+.row .col-1-7 { width: 14.28571%; }
+.row .col-6-7 { width: 85.71429%; }
+.row .col-1-8 { width: 12.5%; }
+.row .col-7-8 { width: 87.5%; }
+.row .col-1-9 { width: 11.11%; }
+.row .col-8-9 { width: 88.88889%; }
+.row .col-1-10 { width: 10%; }
+.row .col-9-10 { width: 90%; }
+.row .col-1-11 { width: 9.09091%; }
+.row .col-10-11 { width: 90.90909%; }
+.row .col-1-12 { width: 8.33%; }
+.row .col-11-12 { width: 91.66667%; }
+.row .col-1-12 { width: 8.33333%; }
+.row .col-2-12 { width: 16.66667%; }
+.row .col-3-12 { width: 25%; }
+.row .col-4-12 { width: 33.33333%; }
+.row .col-5-12 { width: 41.66667%; }
+.row .col-6-12 { width: 50%; }
+.row .col-7-12 { width: 58.33333%; }
+.row .col-8-12 { width: 66.66667%; }
+.row .col-9-12 { width: 75%; }
+.row .col-10-12 { width: 83.33333%; }
+.row .col-11-12 { width: 91.66667%; }
+
+
+
+//
+// Card
+//
+.card{
+  margin: 10px 0;
+
+  .cardHeader{
+    background: white;
+    border-radius: 4px 4px 0 0;
+    border:1px solid #ccc;
+    padding: 10px
+  }
+  .cardContent{
+    background: white;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-width: 0px 1px;
+  }
+  .cardContent:last-of-type{
+    border-bottom: 1px solid #ccc;
+    border-radius: 0px 0px 4px 4px;
+  }
+  .cardContent + .cardContent{
+    border-top: 1px solid #ccc;
+  }
+
+}
+
+//
+// Buttons
+//
+.button{
+  display: inline-block;
+  padding: 10px 35px;
+  border-radius: 4px;
+  background: #48C1CC;
+  color: white;
+  font-size: 12px;
+  font-weight: 100;
+  transition: all .2s linear;
+  &:hover{
+    background: #42A4AD;
+    text-decoration: none;
+    color: white;
+  }
+}
+//
+// Helper classes
+//
+.textCenter{ text-align: center;}
+
+.tall{ padding: 20px 0 !important;}
+
+
+//
+// single venue page
+//
+.venue-img{
+  width: 200px;
+  height: auto;
+  border-radius: 10px;
+}
+@media (max-width: 480px) {
+
+  .row [class*='col-'] { float: none; width: 100%; padding: 0 10px; }
+  }
+
+  .row > .row [class*='col-'] { padding: 0; }
+  .row .col-1.colCentered, .row .col-1-2.colCentered, .row .col-1-3.colCentered, .row .col-1-4.colCentered, .row .col-1-5.colCentered, .row .col-1-6.colCentered, .row .col-1-7.colCentered, .row .col-1-8.colCentered, .row .col-1-9.colCentered, .row .col-1-10.colCentered, .row .col-1-11.colCentered, .row .col-1-12.colCentered { margin: auto; float: none; }
