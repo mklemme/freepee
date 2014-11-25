@@ -30,7 +30,7 @@
 	font-size:30px;
 	margin-top: 7px;
 }
-	
+
 
 /*search*/
 
@@ -63,7 +63,7 @@
 .list {
 }
 
-.loo {	
+.loo {
 
 }
 
@@ -96,7 +96,7 @@ body{
 	position: relative;
 	text-align: right;
 	float:left;
-	
+
 }
 
 .details {
@@ -134,7 +134,7 @@ body{
 }
 
 hr {
-	clear: both;ß
+	clear: both;
 }
 
 /*filter*/
@@ -165,7 +165,7 @@ hr {
 	position: relative;
 	display: inline-block;
 	vertical-align: top;
-	margin-right: -4px; 
+	margin-right: -4px;
 	position: center;
 	border-radius: 50px;
 }
@@ -192,6 +192,7 @@ hr {
 #esampleInputPassword2 {
 	margin-bottom: 19px;
 }
+<<<<<<< HEAD
 
 /*REVIEW SUBMIT
 */
@@ -204,3 +205,5 @@ hr {
 width:100%;
 height:666px;
 }
+=======
+>>>>>>> 95d15830218bc91e07cbadefdf9e40a4eb21cdb2
