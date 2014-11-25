@@ -11,7 +11,7 @@ class Loo < ActiveRecord::Base
   # validates :state, presence: true
   # validates :postalCode, presence: true
   # validates :country, presence: true
-  
+
   time1 = Time.now
   yyyy = time1.year.to_s
   mm = '%02d' % time1.month.to_s
@@ -52,8 +52,10 @@ class Loo < ActiveRecord::Base
   end
 
   def self.foursquare_single(fs_id)
-    # Look up forusquare venue by fs_id
+    client = Foursquare2::Client.new(:client_id => 'ZMGVY0FB55B1F1SGXZUULHJBJASPV4SPACNOQ4TF4BMYCWDG', :client_secret => '0OZJQ5KBQIE1ACR40RRJY2W3FB0ORXMN51GG25LA32ILWJX0', :api_version => @time2.to_s)
 
-    # return result
+    # Finds one specific Foursquare venue.
+    @response = client.venue(fs_id)
+
   end
 end

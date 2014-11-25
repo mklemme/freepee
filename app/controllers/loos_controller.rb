@@ -13,6 +13,7 @@ class LoosController < ApplicationController
 
   def create
     loo = Loo.create(loo_params)
+    loo.ratings.create(loo_params[:rating])
     redirect_to loo_path(loo)
   end
 
@@ -25,36 +26,17 @@ class LoosController < ApplicationController
   end
 
   def foursquare_single
-    # Get time. Need to pass in a particular format
-    # to the Foursquare API. It's required.
-    time1 = Time.now
-    yyyy = time1.year.to_s
-    mm = '%02d' % time1.month.to_s
-    dd = '%02d' % time1.day.to_s
-    @time2 = yyyy + mm + dd
 
+    fs_id = params[:fs_id]
 
-      def self.foursquare(lat,lon)
-
-      @lat = lat.to_f
-      @lon = lon.to_f
-      # We need to put client_secret somwhere else. Note that the Foursquare API
-      # needs today's date as a parameter.
-      client = Foursquare2::Client.new(:client_id => 'ZMGVY0FB55B1F1SGXZUULHJBJASPV4SPACNOQ4TF4BMYCWDG', :client_secret => '0OZJQ5KBQIE1ACR40RRJY2W3FB0ORXMN51GG25LA32ILWJX0', :api_version => @time2.to_s)
-
-      # Finds one specific Foursquare venue. 
-      response = client.venue(:fs_id)
-
-      # Generates an array, loos, for use in loos list
-      @loo = response.venue.map do |venue|
-        {fs_id: venue.id, name: venue.name, address: venue.location.address}
-      
-      end
-  end
-
-
-    fs_id = params[:id]
-    @loo = Loo.foursquare_single(fs_id)
+    loo_hash = Loo.foursquare_single(fs_id)
+    @loo = Loo.new
+    @loo.name = loo_hash['name']
+    @loo.address = loo_hash['location']['address']
+    # @loo.fs_id = params[:fs_id]
+    @loo.city = loo_hash['location']['city']
+    @loo.state = loo_hash['location']['state']
+    @loo.postalCode = loo_hash['location']['zip']
 
     render :foursquare
 
@@ -81,7 +63,7 @@ class LoosController < ApplicationController
   end
 
   def loo_params
-    params.require(:loo).permit(:name, :address)
+    params.require(:loo).permit(:name, :address, :key, :baby_changing, :handicapped, :cost)
   end
 
   def rating_params

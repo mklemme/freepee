@@ -24,6 +24,12 @@ ActiveRecord::Schema.define(version: 20141123181332) do
   create_table "loos", force: true do |t|
     t.string   "name"
     t.string   "address"
+    t.string   "city"
+    t.string   "state"
+    t.string   "postalCode"
+    t.string   "country"
+    t.float    "lat"
+    t.float    "lon"
     t.datetime "created_at"
     t.datetime "updated_at"
     t.float    "rating"

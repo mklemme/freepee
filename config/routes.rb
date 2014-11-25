@@ -4,7 +4,7 @@ Rails.application.routes.draw do
   post 'loos/:id/new_rating', to: 'loos#add_comment', as: 'new_rating'
   post 'loos/foursquare', to: 'loos#foursquare_results', as:'foursquare_results'
   get 'loos/fs/:fs_id', to: 'loos#foursquare_single', as: 'foursquare_single'
-  post 'loos/foursquare_single', to: 'loos#foursquare_single_action', as: 'foursquare_single_action'
+  post 'loos/foursquare_single', to: 'loos#create', as: 'foursquare_single_action'
 
   match '/contacts', to: 'contacts#new', via: 'get'
   resources "contacts", only: [:new, :create]

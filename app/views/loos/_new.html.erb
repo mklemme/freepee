@@ -1,8 +1,6 @@
-<%= form_for @loo, :html => {:class => 'form-stacked'} do |f| %>
+<%= form_for @loo, url: foursquare_single_action_path, :html => {:class => 'form-stacked'} do |f| %>
 
-<% if params[:fs_id].length > 10 %>
-  <%= f.hidden_field :hidden_field_name, { :fs_id => params[:fs_id]} %>
-<% end %>
+
 <div class="form-group">
   <%= f.label :name %><br />
   <%= f.text_field(:name, autofocus: true) %>
@@ -13,15 +11,6 @@
   <%= f.text_field(:address) %>
 </div>
 
-<div class="form-group">
-  <%= f.label :rating %><br />
-  <%= radio_button_tag(:rating, "bad") %>
-  <%= label_tag(:rating_bad, "):") %>
-  <%= radio_button_tag(:rating, "ok") %>
-  <%= label_tag(:rating_ok, "|:") %>
-  <%= radio_button_tag(:rating, "good") %>
-  <%= label_tag(:rating_good, "(:") %>
-</div>
 
 <div class="form-group">
   <%= f.label :Requires_key %>
