@@ -1,28 +1,27 @@
-<p> Name: <%= @loo.name %> </p>
-<p> Address: <%= @loo.address %> </p>
-<p> Rating: <%= @loo.rating %> </p>
-<p> Baby changing? <%= @loo.baby_changing %></p>
-<p> Handicapped? <%= @loo.handicapped %> </p>
-<p> Cost? <%= @loo.cost %> </p>
-<p> Key required? <%= @loo.key %> </p>
-<p> Stall type: <%= @loo.stall %></p>
-<p> Showers? <%= @loo.shower %></p>
-<p> toiletries? <%= @loo.toiletries %></p>
-<p> Venue: <%= @loo.venue %></p>
-<hr>
-<%= render 'partials/commentform' %>
-<hr>
 
-<% @id = 1 %>
 
-<% @loo.ratings.each do |rating| %>
-  <div id="rating-<%= @id %>">
-    <p> Comment: <%= rating.comment %> </p>
-    <p> Rating: <% if rating.score == 2 %> :) <% elsif rating.score == 1 %> :| <% else %> :(<% end %></p>
-    <hr>
+<%= render :partial => 'partials/index' %>
+<div class="row">
+  <div class="col-1-3 card textCenter">
+    <div class="cardHeader tall">
+      <img src="<%= @loo_photo %>" alt="" class="venue-img responsive-img" />
+      <h1><%= @loo.name %></h1>
+      <p class="address">
+
+          <span><%= @loo.address %></span>
+          <span><%= @loo.city %></span>
+          <span><%= @loo.country %></span>
+          <span><%= @loo.postalCode %></span>
+          <br>
+          <h4>
+     		Thanks for rating this loo!
+   			 </h4>
+   			 <br>
+   		<a href ="/">Home</a>
+      </p>
+    </div>
+  </div>
+  <div class="col-2-3 card">
+
+  </div>
 </div>
-<% @id += 1 %>
-<% end %>
-<script>
-
-</script>
