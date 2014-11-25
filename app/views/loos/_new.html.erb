@@ -14,13 +14,13 @@
 
 <div class="btn-group">
   <%= f.radio_button :rating, "bad", :style=>"display:none;" %>
-  <button type="button" class="btn btn-default"><img src="/assets/ratings/bad.png"></button>
+  <button type="button" class="btn btn-default"><img src="<%= image_path('emojis/bad.png') %>" alt="" /></button>
 
   <%= f.radio_button :rating, "ok", :style=>"display:none;" %>
-  <button type="button" class="btn btn-default"><img src="/assets/ratings/meh.png"></button>
+  <button type="button" class="btn btn-default"><img src="<%= image_path('emojis/meh.png') %>" alt="" /></button>
 
   <%= f.radio_button :rating, "good", :style=>"display:none;" %>
-  <button type="button" class="btn btn-default"><img src="/assets/ratings/good.png"></button>
+  <button type="button" class="btn btn-default"><img src="<%= image_path('emojis/good.png') %>" alt="" /></button>
 </div>
 <table class="review-table">
   <tr>

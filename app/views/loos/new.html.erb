@@ -1,72 +1,9 @@
-<%= render "partials/newloo" %>
 
-<div class="container">
-
-<%= form_for @loo, :html => {:class => "form-inline"} do |f| %>
-
-  <div class="form-group form-horizontal">
-    <%= f.label :name %><br />
-    <%= f.text_field(:name, autofocus: true) %>
-  </div>
-
-  <div class="form-group">
-    <%= f.label :address %><br />
-    <%= f.text_field(:address) %>
-  </div>
-
-
-<div class="btn-group">
-  <%= f.radio_button :rating, "bad", :style=>"display:none;" %>
-  <button type="button" class="btn btn-default"><img src="<%= image_path('ratings/bad.png') %>" alt="" /></button>
-
-  <%= f.radio_button :rating, "ok", :style=>"display:none;" %>
-  <button type="button" class="btn btn-default"><img src="<%= image_path('ratings/meh.png') %>" alt="" /></button>
-
-  <%= f.radio_button :rating, "good", :style=>"display:none;" %>
-  <button type="button" class="btn btn-default"><img src="<%= image_path('ratings/good.png') %>" alt="" /></button>
+<%= render :partial => 'partials/index' %>
+<br>
+<h1>Add a new loo!</h1>
+<hr>
 </div>
-
-  <div class="form-group">
-    <%= f.check_box(:key) %>
-    <%= f.label :Requires_key %>
-  </div>
-
-  <div class="form-group">
-    <%= f.label :Baby_changing %>
-    <%= f.check_box(:baby_changing) %>
-  </div>
-
-  <div class="form-group">
-    <%= f.label :Handicap_accessible %>
-    <%= f.check_box(:handicapped) %>
-  </div>
-
-  <div class="form-group">
-    <%= f.label :Pay_to_use %>
-    <%= f.check_box(:cost) %>
-  </div>
-
-  <div class="form-group">
-    <%= f.label :Stalls %>
-    <%= f.check_box(:stall) %>
-  </div>
-
-  <div class="form-group">
-    <%= f.label :Shower %>
-    <%= f.check_box(:shower) %>
-  </div>
-
-  <div class="form-group">
-    <%= f.label :Toiletries %>
-    <%= f.check_box(:toiletries) %>
-  </div>
-
-  <div class="Actions btn-primary">
-    <%= f.submit "Add" %>
-  </div>
-  
-
-
-<% end %>
-
-</container>
+<div class="review-form">
+<%= render :partial => 'new' %>
+<div>
