@@ -1,5 +1,5 @@
 <div class="container">
-	
+
 	<%= render "partials/index" %>
 
 	<div class="panel panel-default">
@@ -8,7 +8,7 @@
 
 
 				<% @loos.each do |l| %>
-				<% if l[:user_id] %>
+				<% if l[:id] %>
 				<div class="loo">
 					<div class="main_info">
 						<p> <%= l[:name] %> </p>
@@ -45,7 +45,6 @@
 					<p> <%= l[:name] %> </p>
 					<p> <%= l[:address] %> </p>
 				</div>
-
 				<%= link_to("Foursquare result", foursquare_single_path(l[:fs_id]) ) %>
 
 				<% end %>
@@ -58,9 +57,5 @@
 
 
 		</div>
-	</div>
-
-	<div class="footer">
-		<button type="button" class="btn btn-warning">filter</button>
 	</div>
 </div>
