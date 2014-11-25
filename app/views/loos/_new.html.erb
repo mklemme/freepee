@@ -12,14 +12,15 @@
   <%= f.text_field(:address) %>
 </div>
 
-<div class="form-group">
-    <%= f.label :rating %><br />
-    <%= radio_button_tag(:rating, "bad") %>
-    <%= label_tag(:rating_bad, "):") %>
-    <%= radio_button_tag(:rating, "ok") %>
-    <%= label_tag(:rating_ok, "|:") %>
-    <%= radio_button_tag(:rating, "good") %>
-    <%= label_tag(:rating_good, "(:") %>  
+<div class="btn-group">
+  <%= f.radio_button :rating, "bad", :style=>"display:none;" %>
+  <button type="button" class="btn btn-default"><img src="/assets/ratings/bad.png"></button>
+
+  <%= f.radio_button :rating, "ok", :style=>"display:none;" %>
+  <button type="button" class="btn btn-default"><img src="/assets/ratings/meh.png"></button>
+
+  <%= f.radio_button :rating, "good", :style=>"display:none;" %>
+  <button type="button" class="btn btn-default"><img src="/assets/ratings/good.png"></button>
 </div>
 <table class="review-table">
   <tr>

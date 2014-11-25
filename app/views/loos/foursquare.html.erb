@@ -4,7 +4,10 @@
 
 <div class="keyinfo">
 <h1><%= @loo.name %></h1>
+<p ></p>
 <p><%= @loo.address %></p>
+<%= link_to("Map", show_map_path( lat: @loo.lat, lon: @loo.lon) ) %>
+
 </div>
 <hr>
 <h3>REVIEW</h3>

@@ -11,6 +11,13 @@ class LoosController < ApplicationController
     @loo = Loo.find_by_id(params[:id])
   end
 
+  def show_map
+    @loo = Loo.new
+    gon.lat = params[:lat]
+    gon.lon = params[:lon]
+    render :show_map
+  end
+
   def create
     loo = Loo.create(loo_params)
     loo.ratings.create(loo_params[:rating])
@@ -37,7 +44,9 @@ class LoosController < ApplicationController
     @loo.city = loo_hash['location']['city']
     @loo.state = loo_hash['location']['state']
     @loo.postalCode = loo_hash['location']['zip']
-
+    @loo.lat = loo_hash['location']['lat']
+    @loo.lon = loo_hash['location']['lng']
+  
     render :foursquare
 
 
