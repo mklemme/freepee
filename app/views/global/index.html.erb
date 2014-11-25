@@ -6,7 +6,7 @@
 
 <div id="initial-options">
   <div class="option1">
-      <button type="button" class="btn btn-primary current-location-btn" onclick="engine()">Use current location</button>
+      <button type="button" class="btn btn-primary current-location-btn" onclick="engine();">Use current location</button>
   </div>
   <hr>
   <div class="option2">
@@ -20,7 +20,7 @@
 <br>
   <div class="gif-container">
     <!-- this text changes if we're unable to geolocate you -->
-    <span id="note"></span> 
+    <span id="note"></span>
   </div>
 </div>
 <script>
@@ -29,20 +29,21 @@ console.log("ALREADY CALLED?", gon.alreadyCalled);
   console.log("NOT CALLED YET")
   // engine();
   function engine() {
-    setTimeout(getLocation, 1500);
+    // setTimeout(getLocation, 1500);
+    getLocation();
     $("#initial-options").hide();
     $("#note").html("<img src='/images/asset-loading-walking_man.gif' class='scaling-img'>");
     $("#loading-text").innerHTML="Please hold on...we're finding your location...";
   }
   //find lat lon location by address input
   function customLocation() {
-    
+
     $("#initial-options").hide();
     var geocoder = new google.maps.Geocoder();
     var address = $("#exampleInputPassword2.form-control").val();
     geocoder.geocode({ 'address': address }, function (results, status) {
         if (status == google.maps.GeocoderStatus.OK) {
-            console.log("FINDING LOCATION") 
+            console.log("FINDING LOCATION")
             setTimeout(getLocation, 1500);
             var lat = results[0].geometry.location.lat();
             var lon = results[0].geometry.location.lng();
@@ -50,7 +51,7 @@ console.log("ALREADY CALLED?", gon.alreadyCalled);
             console.log(lon)
             $("#note").html("<img src='/images/asset-loading-walking_man.gif' class='scaling-img'>");
             findClosest(lat, lon);
-        
+
         } else {
             alert("Request failed - please enter a valid address.");
         }
@@ -63,13 +64,11 @@ console.log("ALREADY CALLED?", gon.alreadyCalled);
   var x = document.getElementById("note");
   //finding geolocation and sentting text at top of page based on results, calling the showPosition function which gets coords
   function getLocation() {
-    
-      if (navigator.geolocation) {
-        console.log("FINDING LOCATION")
-          navigator.geolocation.getCurrentPosition(showPosition, showError);
-      } else {
-          x.innerHTML = "We're sorry, your geolocation is not supported by this browser. Please enter your current address";
-      }
+    if (navigator.geolocation) {
+      navigator.geolocation.getCurrentPosition(showPosition, showError);
+    } else {
+      x.innerHTML = "We're sorry, your geolocation is not supported by this browser. Please enter your current address";
+    }
   }
 
   //finding coords, calling other functions
