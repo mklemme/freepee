@@ -30,7 +30,7 @@
 	font-size:30px;
 	margin-top: 7px;
 }
-	
+
 
 /*search*/
 
@@ -63,7 +63,7 @@
 .list {
 }
 
-.loo {	
+.loo {
 
 }
 
@@ -87,7 +87,7 @@ td {
 	position: relative;
 	text-align: right;
 	float:left;
-	
+
 }
 
 .details {
@@ -125,7 +125,7 @@ td {
 }
 
 hr {
-	clear: both;ß
+	clear: both;
 }
 
 /*filter*/
@@ -156,7 +156,7 @@ hr {
 	position: relative;
 	display: inline-block;
 	vertical-align: top;
-	margin-right: -4px; 
+	margin-right: -4px;
 	position: center;
 	border-radius: 50px;
 }
@@ -183,7 +183,3 @@ hr {
 #esampleInputPassword2 {
 	margin-bottom: 19px;
 }
-
-
-
-
