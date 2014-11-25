@@ -1,31 +1,21 @@
-<div class="container home-page-container">
-  <div class="navbar navbar-default row">
-    <span class="brand col-xs-6">freepee.club</a></span>
-  </div>
 
+<%= render :partial => 'partials/index' %>
 <!-- Button trigger modal -->
 <br>
-<button type="button" id="launchButton" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal">
-  Launch freepee
-</button>
-<!-- Modal -->
-<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-  <div class="modal-dialog">
-    <div class="modal-content">
-      <div class="modal-header">
-        <button type="button" id="modal-close" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
-        <h4 class="modal-title" id="myModalLabel">How can we find you?</h4>
-      </div>
+
+<div id="initial-options">
+  <div class="option1">
       <button type="button" class="btn btn-primary current-location-btn" onclick="engine()">Use current location</button>
+  </div>
+  <hr>
+  <div class="option2">
       <input class="form-control" id="exampleInputPassword2" placeholder="Enter address here" name="address" autofocus>
       <input type="submit" class="btn btn-primary" value="Search by address" onclick="customLocation()">
-    </div>
   </div>
 </div>
 <br>
-<div class="loading-text">
-
-</div>
+<span id="loading-text">
+</span>
 <br>
   <div class="gif-container">
     <!-- this text changes if we're unable to geolocate you -->
@@ -36,15 +26,13 @@
 // engine();
 function engine() {
   setTimeout(getLocation, 1500);
-  $("#launchButton").hide();
-  $("#modal-close").click();
+  $("#initial-options").hide();
   $("#note").html("<img src='/images/asset-loading-walking_man.gif' class='scaling-img'>");
-  $("#loading-text").innerHTML("Please hold on...we're finding your location...");
+  $("#loading-text").innerHTML="Please hold on...we're finding your location...";
 }
 //find lat lon location by address input
 function customLocation() {
-  $("#launchButton").hide();
-  $("#modal-close").click();
+  $("#initial-options").hide();
   var geocoder = new google.maps.Geocoder();
   var address = $("#exampleInputPassword2.form-control").val();
   geocoder.geocode({ 'address': address }, function (results, status) {
