@@ -22,18 +22,18 @@
 						<table style="width:100%">
 							<tr>
 								<% if l[:baby_changing] == true %>
-								<td><img src="assets/emojis/baby.png"></td>
+								<td><img src="<%= image_path('emojis/baby.png') %>" alt="" /></td>
 								<% end %>
 								<% if l[:handicapped] ==  true %>
-								<td><img src="assets/emojis/wheelchair.png"></td>
+								<td><img src="<%= image_path('emojis/wheelchair.png') %>" alt="" /></td>
 								<% end %>
 							</tr>
 							<tr>
 								<% if l[:cost] != "free" %>
-								<td><img src="assets/emojis/dollar.png"></td>
+								<td><img src="<%= image_path('emojis/dollar.png') %>" alt="" /></td>
 								<% end %>
 								<% if l[:key] == true %>
-								<td><img src="assets/emojis/key.png"></td>
+								<td><img src="<%= image_path('emojis/key.png') %>" alt="" /></td>
 								<% end %>
 							</tr>
 						</table>

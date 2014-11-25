@@ -1,6 +1,7 @@
 class LoosController < ApplicationController
   def index
     @loos = Loo.all
+    gon.alreadyCalled = true
   end
 
   def new
@@ -9,6 +10,7 @@ class LoosController < ApplicationController
 
   def show
     @loo = Loo.find_by_id(params[:id])
+    
   end
 
   def show_map
@@ -27,7 +29,7 @@ class LoosController < ApplicationController
   def foursquare_results
     lat = foursquare_params[:lat]
     lon = foursquare_params[:lon]
-    # redirect_to loos_path
+    gon.alreadyCalled = true
     @loos = Loo.foursquare(lat,lon)
     render :index
   end
