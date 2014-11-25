@@ -1,5 +1,6 @@
-<%= form_for @loo, url: foursquare_single_action_path, :html => {:class => 'form-stacked'} do |f| %>
+<div class="container-fluid">
 
+<%= form_for @loo, url: foursquare_single_action_path, :html => {:class => 'form-stacked'} do |f| %>
 
 <div class="form-group">
   <%= f.label :name %><br />
@@ -11,28 +12,54 @@
   <%= f.text_field(:address) %>
 </div>
 
+<div class="form-group">
+    <%= f.label :rating %><br />
+    <%= radio_button_tag(:rating, "bad") %>
+    <%= label_tag(:rating_bad, "):") %>
+    <%= radio_button_tag(:rating, "ok") %>
+    <%= label_tag(:rating_ok, "|:") %>
+    <%= radio_button_tag(:rating, "good") %>
+    <%= label_tag(:rating_good, "(:") %>  
+</div>
 
 <div class="form-group">
+  <%= f.check_box(:key) %> <span> </span>
   <%= f.label :Requires_key %>
-  <%= f.check_box(:key) %>
 </div>
 
 <div class="form-group">
+  <%= f.check_box(:baby_changing) %> <span> </span>
   <%= f.label :Baby_changing %>
-  <%= f.check_box(:baby_changing) %>
 </div>
 
 <div class="form-group">
-  <%= f.label :Handicap_accessible %>
-  <%= f.check_box(:handicapped) %>
+  <%= f.check_box(:handicapped) %><span> </span>
+  <%= f.label :Handicapped %>
 </div>
 
 <div class="form-group">
+  <%= f.check_box(:cost) %> <span> </span>
   <%= f.label :Pay_to_use %>
-  <%= f.check_box(:cost) %>
 </div>
+
+<div class="form-group">
+    <%= f.check_box(:stall) %><span> </span>
+    <%= f.label :Stalls %>
+  </div>
+
+  <div class="form-group">
+    <%= f.check_box(:shower) %><span> </span>
+    <%= f.label :Shower %>
+  </div>
+
+  <div class="form-group">
+    <%= f.check_box(:toiletries) %><span> </span>
+    <%= f.label :Toiletries %>
+  </div>
+
 
 <div class="Actions">
-  <%= f.submit "Add" %>
+  <%= f.submit "Add", {:class => "btn btn-primary"} %>
+</div>
 </div>
 <% end %>

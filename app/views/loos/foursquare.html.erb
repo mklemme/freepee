@@ -1,7 +1,18 @@
-<p><%= @loo.name %></p>
-<p><%= @loo.address %></p>
-<p><%= @loo.city %>, <%= @loo.state %> <%= @loo.postalCode %></p>
 
+<%= render :partial => 'partials/index' %>
+<br>
+
+<div class="keyinfo">
+<h1><%= @loo.name %></h1>
+<p><%= @loo.address %></p>
+<p><%= @loo.city %>, <%= @loo.state %> </p>
+</div>
+<hr>
+<h3>REVIEW</h3>
 <p>We need information about this place's bathroom. Please rate it!</p>
 
+</div>
+<div class="review-form">
 <%= render :partial => 'new' %>
+<div>
+
