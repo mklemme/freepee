@@ -1,81 +1,9 @@
-<%= render "partials/newloo" %>
 
-
-<form class="form-inline" role="form">
-
-<%= form_for @loo do |f| %>
-
-  <div class="form-group">
-    <%= f.label :name %><br />
-    <%= f.text_field(:name, autofocus: true) %>
-  </div>
-
-  <div class="form-group">
-    <%= f.label :address %><br />
-    <%= f.text_field(:address) %>
-  </div>
-
-  <div class="form-group">
-    <%= f.label :City %>
-    <%= f.check_box(:city) %>
-  </div>
-
-  <div class="form-group">
-    <%= f.label :State %>
-    <%= f.check_box(:state) %>
-  </div>
-
-  <div class="form-group">
-    <%= f.label :rating %><br />
-    <%= radio_button_tag(:rating, "bad") %>
-    <%= label_tag(:rating_bad, "):") %>
-    <%= radio_button_tag(:rating, "ok") %>
-    <%= label_tag(:rating_ok, "|:") %>
-    <%= radio_button_tag(:rating, "good") %>
-    <%= label_tag(:rating_good, "(:") %>  
-  </div>
-
-  <div class="form-group">
-    <%= f.check_box(:key) %>
-    <%= f.label :Requires_key %>
-  </div>
-
-  <div class="form-group">
-    <%= f.label :Baby_changing %>
-    <%= f.check_box(:baby_changing) %>
-  </div>
-
-  <div class="form-group">
-    <%= f.label :Handicap_accessible %>
-    <%= f.check_box(:handicapped) %>
-  </div>
-
-  <div class="form-group">
-    <%= f.label :Pay_to_use %>
-    <%= f.check_box(:cost) %>
-  </div>
-
-  <div class="form-group">
-    <%= f.label :Stalls %>
-    <%= f.check_box(:stall) %>
-  </div>
-
-  <div class="form-group">
-    <%= f.label :Shower %>
-    <%= f.check_box(:shower) %>
-  </div>
-
-  <div class="form-group">
-    <%= f.label :Toiletries %>
-    <%= f.check_box(:toiletries) %>
-  </div>
-
-  <div class="Actions btn-primary">
-    <%= f.submit "Add" %>
-  </div>
-  
-
-
-<% end %>
-
-</form>
+<%= render :partial => 'partials/index' %>
+<br>
+<h1>Add a new loo!</h1>
+<hr>
+</div>
+<div class="review-form">
+<%= render :partial => 'new' %>
+<div>
