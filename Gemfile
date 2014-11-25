@@ -26,7 +26,7 @@ gem 'sdoc', '~> 0.4.0',          group: :doc
 gem "twitter-bootstrap-rails"
 gem "simple_form"
 gem "mail_form"
-
+gem 'gon'
 # Foursquare
 gem 'foursquare', '~> 0.3.4'
 

@@ -27,8 +27,8 @@
 </div>
 
   <div class="form-group">
-    <%= f.label :Requires_key %>
     <%= f.check_box(:key) %>
+    <%= f.label :Requires_key %>
   </div>
 
   <div class="form-group">
@@ -46,9 +46,27 @@
     <%= f.check_box(:cost) %>
   </div>
 
-  <div class="Actions">
+  <div class="form-group">
+    <%= f.label :Stalls %>
+    <%= f.check_box(:stall) %>
+  </div>
+
+  <div class="form-group">
+    <%= f.label :Shower %>
+    <%= f.check_box(:shower) %>
+  </div>
+
+  <div class="form-group">
+    <%= f.label :Toiletries %>
+    <%= f.check_box(:toiletries) %>
+  </div>
+
+  <div class="Actions btn-primary">
     <%= f.submit "Add" %>
   </div>
+  
+
+
 <% end %>
 
 </container>
