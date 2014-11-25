@@ -17,13 +17,13 @@
 
 <div class="btn-group">
   <%= f.radio_button :rating, "bad", :style=>"display:none;" %>
-  <button type="button" class="btn btn-default"><img src="/assets/ratings/bad.png"></button>
+  <button type="button" class="btn btn-default"><img src="<%= image_path('ratings/bad.png') %>" alt="" /></button>
 
   <%= f.radio_button :rating, "ok", :style=>"display:none;" %>
-  <button type="button" class="btn btn-default"><img src="/assets/ratings/meh.png"></button>
+  <button type="button" class="btn btn-default"><img src="<%= image_path('ratings/meh.png') %>" alt="" /></button>
 
   <%= f.radio_button :rating, "good", :style=>"display:none;" %>
-  <button type="button" class="btn btn-default"><img src="/assets/ratings/good.png"></button>
+  <button type="button" class="btn btn-default"><img src="<%= image_path('ratings/good.png') %>" alt="" /></button>
 </div>
 
   <div class="form-group">
