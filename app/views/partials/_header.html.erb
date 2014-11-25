@@ -1,10 +1,24 @@
 <header>
   <h1><%= link_to("Freepee.club", root_path, class: "logo") %></h1>
+  <a href="#" class="button buttonColor menuToggle">menu</a>
+
   <nav>
     <div class="buttonGroup">
       <%= link_to("New loo", new_loo_path, class: "button") %><%= link_to("My account", new_user_session_path, class: "button") %>
     </div>
   </nav>
 </header>
+<div class="navSecondary">
+  <div class="row">
+    <div class="col-4-12 colCentered">
+      <li><%= link_to("Add a new loo", new_loo_path, class: "button") %></li>
+      <li><%= link_to("About us", new_loo_path, class: "button") %></li>
+      <li><%= link_to("Contact", new_loo_path, class: "button") %></li>
+      <li><%= link_to("Signup", new_loo_path, class: "button") %></li>
+      <li><%= link_to("Login", new_loo_path, class: "button") %></li>
+    </div>
+  </div>
+
+</div>
 
 <%= render :partial => 'partials/flash_messages' %>

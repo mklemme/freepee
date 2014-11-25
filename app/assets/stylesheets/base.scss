@@ -1,9 +1,8 @@
 *, *:before, *:after { -webkit-box-sizing: border-box; -moz-box-sizing: border-box; box-sizing: border-box; }
-body{
+body,
+section.results{
   background: #f1f1f1;
   font-size: 12px;
-  margin: 0;
-  padding: 0;
 }
 .blank{
   background: white;
@@ -109,14 +108,28 @@ header{
       padding: 10px 0;
     }
   }
+
   nav{
     a{
       display: inline-block;
     }
   }
 }
-
-
+.menuToggle,
+.navSecondary{
+  display: none !important;
+}
+.navSecondary{
+  padding: 20px 0;
+  background: #333;
+  li{
+    text-align: center;
+    list-style: none;
+    a{
+      color: white
+    }
+  }
+}
 //
 // Card
 //
@@ -251,10 +264,21 @@ header{
   height: auto;
   border-radius: 10px;
 }
-@media (max-width: 480px) {
+@media (max-width: 590px) {
 
   .row [class*='col-'] { float: none; width: 100%; padding: 0 10px; }
-  }
+
+    nav{
+      display: none;
+    }
+
+
+      .menuToggle,
+      .navSecondary.show{
+        display:block !important;
+      }
+    }
+
 
   .row > .row [class*='col-'] { padding: 0; }
   .row .colCentered { margin: auto; float: none; }

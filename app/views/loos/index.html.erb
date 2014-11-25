@@ -1,54 +1,55 @@
-<div class="container tall">
+<section class="results">
+	<div class="container tall">
 
-	<%= render "partials/index" %>
+		<%= render "partials/index" %>
 
-	<div class="panel panel-default">
-		<div class="panel-body">
-			<div class="list">
+		<div class="panel panel-default">
+			<div class="panel-body">
+				<div class="list">
 
 
-				<% @loos.each do |l| %>
-				<% if l[:id] %>
-				<div class="loo">
+					<% @loos.each do |l| %>
+					<% if l[:id] %>
+					<div class="loo">
+						<div class="main_info">
+							<p> <%= l[:name] %> </p>
+							<p> <%= l[:address] %> </p>
+						</div>
+						<div class="human_factors">
+							<p> <%= l[:rating] %> </p>
+							<p> <%= l[:dist] %> </p>
+						</div>
+						<div class="details">
+							<table style="width:100%">
+								<tr>
+									<% if l[:baby_changing] == true %>
+									<td><img src="<%= image_path('emojis/baby.png') %>" alt="" /></td>
+									<% end %>
+									<% if l[:handicapped] ==  true %>
+									<td><img src="<%= image_path('emojis/wheelchair.png') %>" alt="" /></td>
+									<% end %>
+								</tr>
+								<tr>
+									<% if l[:cost] != "free" %>
+									<td><img src="<%= image_path('emojis/dollar.png') %>" alt="" /></td>
+									<% end %>
+									<% if l[:key] == true %>
+									<td><img src="<%= image_path('emojis/key.png') %>" alt="" /></td>
+									<% end %>
+								</tr>
+							</table>
+						</div>
+					</div>
+					<%= link_to("View loo", loo_path(l[:id])) %>
+					<% else %>
 					<div class="main_info">
 						<p> <%= l[:name] %> </p>
 						<p> <%= l[:address] %> </p>
 					</div>
-					<div class="human_factors">
-						<p> <%= l[:rating] %> </p>
-						<p> <%= l[:dist] %> </p>
-					</div>
-					<div class="details">
-						<table style="width:100%">
-							<tr>
-								<% if l[:baby_changing] == true %>
-								<td><img src="<%= image_path('emojis/baby.png') %>" alt="" /></td>
-								<% end %>
-								<% if l[:handicapped] ==  true %>
-								<td><img src="<%= image_path('emojis/wheelchair.png') %>" alt="" /></td>
-								<% end %>
-							</tr>
-							<tr>
-								<% if l[:cost] != "free" %>
-								<td><img src="<%= image_path('emojis/dollar.png') %>" alt="" /></td>
-								<% end %>
-								<% if l[:key] == true %>
-								<td><img src="<%= image_path('emojis/key.png') %>" alt="" /></td>
-								<% end %>
-							</tr>
-						</table>
-					</div>
-				</div>
-				<%= link_to("View loo", loo_path(l[:id])) %>
-				<% else %>
-				<div class="main_info">
-					<p> <%= l[:name] %> </p>
-					<p> <%= l[:address] %> </p>
-				</div>
-				<%= link_to("Foursquare result", foursquare_single_path(l[:fs_id]) ) %>
+					<%= link_to("Foursquare result", foursquare_single_path(l[:fs_id]) ) %>
 
-				<% end %>
-				<hr>
+					<% end %>
+					<hr>
 				</a>
 				<% end %>
 				<%=  %>
@@ -59,3 +60,4 @@
 		</div>
 	</div>
 </div>
+</section>
