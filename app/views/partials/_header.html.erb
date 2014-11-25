@@ -1,1 +1,10 @@
+<header>
+  <h1><%= link_to("Freepee.club", root_path, class: "logo") %></h1>
+  <nav>
+    <div class="buttonGroup">
+      <%= link_to("New loo", new_loo_path, class: "button") %><%= link_to("My account", new_user_session_path, class: "button") %>
+    </div>
+  </nav>
+</header>
+
 <%= render :partial => 'partials/flash_messages' %>

@@ -23,7 +23,7 @@ gem 'jbuilder', '~> 2.0'
 gem 'sdoc', '~> 0.4.0',          group: :doc
 
 # Bootstrap, simple_form and mail_form gems
-gem "twitter-bootstrap-rails"
+# gem "twitter-bootstrap-rails"
 gem "simple_form"
 gem "mail_form"
 gem 'gon'

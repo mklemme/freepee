@@ -1,4 +1,6 @@
 class LoosController < ApplicationController
+
+  before_action :authenticate_user!, only: [:create, :new]
   def index
     @loos = Loo.all
     gon.alreadyCalled = true
@@ -39,7 +41,9 @@ class LoosController < ApplicationController
     fs_id = params[:fs_id]
 
     @loo_hash = Loo.foursquare_single(fs_id)
-    @loo_photo = @loo_hash['photos']['groups'].first['items'].first['prefix'] +"width960"+ @loo_hash['photos']['groups'].first['items'].first['suffix']
+    if @loo_hash['photos']['groups'].first
+      @loo_photo = @loo_hash['photos']['groups'].first['items'].first['prefix'] +"width960"+ @loo_hash['photos']['groups'].first['items'].first['suffix']
+    end
     @loo = Loo.new
     @loo.name = @loo_hash['name']
     @loo.address = @loo_hash['location']['address']

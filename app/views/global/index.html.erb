@@ -1,17 +1,12 @@
-
-<%= render :partial => 'partials/index' %>
-<!-- Button trigger modal -->
-<br>
-
-
 <div id="initial-options">
+  <img src="<%= image_path('toiletpaper.jpg') %>" alt="" class="responsive-img"/>
   <div class="option1">
-      <button type="button" class="btn btn-primary current-location-btn" onclick="engine();">Use current location</button>
+      <a class="button buttonColor tall" onclick="engine();">Use current location</a>
   </div>
   <hr>
-  <div class="option2">
-      <input class="form-control" id="exampleInputPassword2" placeholder="Enter address here" name="address" autofocus>
-      <input type="submit" class="btn btn-primary" value="Search by address" onclick="customLocation()">
+  <div class="option2 inputGroup">
+      <input class="button" id="exampleInputPassword2" placeholder="Enter address here" name="address">
+      <a class="button  tall buttonColor" onclick="customLocation()">Search by address</a>
   </div>
 </div>
 <br>
@@ -29,8 +24,8 @@ console.log("ALREADY CALLED?", gon.alreadyCalled);
   console.log("NOT CALLED YET")
   // engine();
   function engine() {
-    // setTimeout(getLocation, 1500);
-    getLocation();
+    setTimeout(getLocation, 1500);
+    $("body").removeClass("home").addClass("blank")
     $("#initial-options").hide();
     $("#note").html("<img src='/images/asset-loading-walking_man.gif' class='scaling-img'>");
     $("#loading-text").innerHTML="Please hold on...we're finding your location...";
@@ -40,7 +35,7 @@ console.log("ALREADY CALLED?", gon.alreadyCalled);
 
     $("#initial-options").hide();
     var geocoder = new google.maps.Geocoder();
-    var address = $("#exampleInputPassword2.form-control").val();
+    var address = $("#exampleInputPassword2").val();
     geocoder.geocode({ 'address': address }, function (results, status) {
         if (status == google.maps.GeocoderStatus.OK) {
             console.log("FINDING LOCATION")

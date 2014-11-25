@@ -2,8 +2,7 @@
 <html>
 <head>
   <title>FreePee Club</title>
-  <link rel="stylesheet" type="text/css" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css">
-  <link href='https://fonts.googleapis.com/css?family=Arvo' rel='stylesheet' type='text/css'>
+
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application'%>
   <%= csrf_meta_tags %>
@@ -13,11 +12,14 @@
   </script>
   <%= include_gon %>
 </head>
-<body>
-<%= render :partial => 'partials/header' %>
+<body class="home">
 
-<%= yield %>
+  <div class="row">
+    <div class="col-4-12 colCentered textCenter">
+      <%= yield %>
+    </div>
+  </div>
+
 
 </body>
-<script type="text/javascript" src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
 </html>
