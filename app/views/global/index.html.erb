@@ -40,8 +40,9 @@ function customLocation() {
           setTimeout(getLocation, 1500);
           var lat = results[0].geometry.location.lat();
           var lon = results[0].geometry.location.lng();
+          $("#note").html("<img src='/images/asset-loading-walking_man.gif' class='scaling-img'>");
           findClosest(lat, lon);
-      $("#note").html("<img src='/images/asset-loading-walking_man.gif' class='scaling-img'>");
+      
       } else {
           alert("Request failed - please enter a valid address.");
       }
@@ -110,5 +111,6 @@ function findClosest(lat, lon){
 
     });
 }
+
 
 </script>

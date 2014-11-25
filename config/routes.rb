@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
-
+  get 'loo/show_map/', to: 'loos#show_map', as: 'show_map'
   resources :loos
+
   post 'loos/:id/new_rating', to: 'loos#add_comment', as: 'new_rating'
   post 'loos/foursquare', to: 'loos#foursquare_results', as:'foursquare_results'
   get 'loos/fs/:fs_id', to: 'loos#foursquare_single', as: 'foursquare_single'
@@ -18,6 +19,8 @@ Rails.application.routes.draw do
   get 'global/terms'
 
   get 'global/privacy'
+
+  
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

@@ -21,8 +21,8 @@ freePee.getLocation=function() {
 freePee.showPosition=function(position) {
     var lat = position.coords.latitude;
     var lon = position.coords.longitude;
-    var lat1 = 37.7786;
-    var lon1 = -122.3892;
+    var lat1 = gon.lat;
+    var lon1 = gon.lon;
     console.log("lat: "+lat);
     console.log("lon: "+lon);
     freePee.initialize(lat, lon); 
@@ -80,6 +80,7 @@ freePee.getLocation();
     </script>
   </head>
   <body>
+  <%= render :partial => 'partials/index' %>
 
     </div>
     <div id="map-canvas"></div>

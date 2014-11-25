@@ -1,7 +1,20 @@
-<p><%= @loo.name %></p>
+
+<%= render :partial => 'partials/index' %>
+<br>
+
+<div class="keyinfo">
+<h1><%= @loo.name %></h1>
+<p ></p>
 <p><%= @loo.address %></p>
-<p><%= @loo.city %>, <%= @loo.state %> <%= @loo.postalCode %></p>
+<%= link_to("Map", show_map_path( lat: @loo.lat, lon: @loo.lon) ) %>
 
-<p>We need information about this place's bathroom. Please rate it!</p>
+</div>
+<hr>
+<h3>REVIEW</h3>
+<p>Please add information about this loo!</p>
 
+</div>
+<div class="review-form">
 <%= render :partial => 'new' %>
+<div>
+

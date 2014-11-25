@@ -93,6 +93,11 @@ GEM
       faraday (~> 0.8)
       faraday_middleware (>= 0.8)
       hashie (>= 1.0, < 3.0.0)
+    gon (5.2.3)
+      actionpack (>= 2.3.0)
+      json
+      multi_json
+      request_store (>= 1.0.5)
     guard (2.8.2)
       formatador (>= 0.2.4)
       listen (~> 2.7)
@@ -176,6 +181,7 @@ GEM
       ffi (>= 0.5.0)
     rdoc (4.1.2)
       json (~> 1.4)
+    request_store (1.1.0)
     responders (1.1.2)
       railties (>= 3.2, < 4.2)
     rest-client (1.7.2)
@@ -263,6 +269,7 @@ DEPENDENCIES
   figaro
   foursquare (~> 0.3.4)
   foursquare2
+  gon
   guard-rspec
   jbuilder (~> 2.0)
   jquery-rails
