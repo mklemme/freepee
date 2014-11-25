@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  
+
   get 'loo/show_map/', to: 'loos#show_map', as: 'show_map'
   resources :loos
 
@@ -19,6 +21,8 @@ Rails.application.routes.draw do
   get 'global/terms'
 
   get 'global/privacy'
+
+  get 'global/settings'
 
   
 
