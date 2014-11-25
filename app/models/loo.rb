@@ -22,6 +22,7 @@ class Loo < ActiveRecord::Base
 
       @lat = lat.to_f
       @lon = lon.to_f
+      
       # We need to put client_secret somwhere else. Note that the Foursquare API
       # needs today's date as a parameter.
       client = Foursquare2::Client.new(:client_id => 'ZMGVY0FB55B1F1SGXZUULHJBJASPV4SPACNOQ4TF4BMYCWDG', :client_secret => '0OZJQ5KBQIE1ACR40RRJY2W3FB0ORXMN51GG25LA32ILWJX0', :api_version => @time2.to_s)
@@ -38,14 +39,24 @@ class Loo < ActiveRecord::Base
 
 
       @local_loo = Loo.all.map do |loo|
-        {id: loo.id, name: loo.name, address: loo.address, rating: loo.rating, lat: "37.791003499999995", long: "-122.4013247", key: loo.key, baby_changing: loo.baby_changing, handicapped: loo.handicapped, cost: loo.cost, stall: loo.stall, shower: loo.shower, toiletries: loo.toiletries, venue: loo.venue, user_id: loo.user_id}
+        # if loo.lat.nil? and loo.lon.nil?
+        #   p "THIS SHIT IS NILLL!"
+        #   binding.pry
+        # else
+        {id: loo.id, name: loo.name, address: loo.address, rating: loo.rating, lat: loo.lat, long: loo.lon, key: loo.key, baby_changing: loo.baby_changing, handicapped: loo.handicapped, cost: loo.cost, stall: loo.stall, shower: loo.shower, toiletries: loo.toiletries, venue: loo.venue, user_id: loo.user_id}
+        # end
       end
 
       @loo_result = @loos + @local_loo
 
       @loo_results = @loo_result.map do |loo|
+        # if lat.nil? and lon.nil?
+        #   p "THIS SHIT IS NILLL!"
+        #   binding.pry
+        # else
         dist = (lat.to_f - loo[:lat].to_f).abs + (lon.to_f - loo[:long].to_f).abs
         {id: loo[:id], user_id: loo[:user_id], fs_id: loo[:fs_id], name: loo[:name], address: loo[:address], dist: dist, key: loo[:key], baby_changing: loo[:baby_changing], handicapped: loo[:handicapped], cost: loo[:cost]}
+      # end
       end
       @result = @loo_results.sort_by{|e| e[:dist]}
 
